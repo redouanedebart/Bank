@@ -9,6 +9,10 @@ Client::Client(double arrivalTime) {
 
 Client::~Client() {}
 
+/**
+ * Accessor for the _time field
+ * @return _time which is the time of arrival of the Client
+ */
 double Client::arrivalTime() {
     return _time;
 }

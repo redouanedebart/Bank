@@ -20,13 +20,16 @@ protected:
     std::queue<Client> _queue;
     Bank* _bank;
     bool _empty;
+    double _meanWaitingTime;
+    int _maxLength;
+    double _meanLength;
 public:
     WaitingQueue(Bank* bankPtr);
     ~WaitingQueue();
     int maxLength();
     double meanLength();
     double meanWaitingTime();
-    void addClient(Client c);
+    void addClient(Client& c);
     bool isEmpty();
     Client* remove();
 
