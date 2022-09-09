@@ -10,6 +10,7 @@
 
 //--------Header files included----//
 #include <iostream>
+#include<list>
 #include "Cashier.h"
 #include "DES.h"
 

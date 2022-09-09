@@ -7,7 +7,9 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals) {
     _cashierCount = cashierCnt;
     _expectedDuration = expDur;
     _meanTimeBetweenArrivals = meanTimeBtwArrivals;
-    for(int i = 0; i< _cashierCount; i++){
+    std::list<Cashier*> cl;
+    _cashierList = cl;
+    for(int i = 0; i< _cashierCount; i++){//TODO: finish this initialization
 
     }
 }
