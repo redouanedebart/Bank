@@ -13,6 +13,7 @@
 //--------Class Prototypes--------//
 class Client{
 protected:
+    double _time;
 public:
     Client(double arrivalTime);
     ~Client();
