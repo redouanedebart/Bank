@@ -23,6 +23,7 @@ protected:
     double _meanTimeBetweenArrivals;
 public:
     Bank(int _cashierCnt, double expDur, double meanTimeBtwArrivals);
+    Bank(Bank& b);
     ~Bank();
     double expectedDuration();
     int cashierCount();

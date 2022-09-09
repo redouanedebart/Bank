@@ -13,6 +13,7 @@ class Arrival: Event{
 protected:
 public:
     Arrival();
+    Arrival(Arrival& arrival);
     ~Arrival();
     void handle();//Creates a client
 };

@@ -14,6 +14,13 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals) {
     }
 }
 
+Bank::Bank(Bank &b) {
+    _cashierCount = b._cashierCount;
+    _expectedDuration = b._expectedDuration;
+    _meanTimeBetweenArrivals = b._meanTimeBetweenArrivals;
+    _cashierList = b._cashierList;
+}
+
 Bank::~Bank() {}
 
 double Bank::expectedDuration() {}

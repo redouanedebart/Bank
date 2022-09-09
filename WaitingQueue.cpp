@@ -20,7 +20,6 @@ WaitingQueue::WaitingQueue(Bank* bankPtr) {
 bool WaitingQueue::isEmpty() {
     return _empty;
 }
-//TODO: Complete these functions
 /**
  * Accessor to the _maxLength field
  * @return the maximum length the queue has had
