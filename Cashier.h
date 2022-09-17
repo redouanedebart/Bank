@@ -21,14 +21,15 @@ protected:
     bool _free; //true if the cashier is available to serve a client
     Bank* _bank;
 public:
-    Cashier(double meanServiceDuration, Bank* bankPtr);
-    ~Cashier();
+    Cashier(double meanServiceDuration, Bank *bankPtr);
+    Cashier(const Cashier& c);
     double meanServiceTime();
     int clientCount();
     double occupationRate();
     bool isFree();
     void serve(Client client);
     void wait();
+
 };
 
 #endif //BANK_CASHIER_H

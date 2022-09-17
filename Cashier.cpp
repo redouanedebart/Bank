@@ -10,11 +10,21 @@
  * of the simulation
  * Creates a cashier with a given mean service time.
  */
-Cashier::Cashier(double meanServiceDuration, Bank* bankPtr) {
+
+Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
     _serviceTime = meanServiceDuration;
     _free = true;
     _clientCounter = 0;
-    _bank = bankPtr;
+}
+/**
+ * Copy constructor
+ * @param c
+ */
+Cashier::Cashier(const Cashier &c) {
+    _serviceTime = c._serviceTime;
+    _clientCounter = c._clientCounter;
+    _free = c._free;
+    _bank = c._bank;
 }
 
 /**
