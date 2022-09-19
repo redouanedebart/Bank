@@ -36,7 +36,23 @@ int Bank::cashierCount() {}
 
 int Bank::clientsCount() {}
 
-Cashier *Bank::firstFreeCashier() {}
+Cashier *Bank::firstFreeCashier() {
+    // MODIFIEE PAR MATTHIEU SAUVAGEOT LE 19/09/2022
+    // Parcours de la liste _cashierList (voir Bank.h)
+  for(i=0; i< _cashierList.size();i++){
+    
+    // Récupération du caissier i
+    Cashier cashier_i = _cashierList[i];
+    
+    // Vérifier si le caissier est libre
+    if(cashier_i.isFree()){
+        
+      // On renvoit le caissier trouvé
+        return cashier_i;
+     }
+  }
+  
+}
 
 double Bank::timeBetweenArrival() {}
 
