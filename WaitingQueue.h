@@ -27,7 +27,7 @@ protected:
     double _meanLength;
 public:
     WaitingQueue(Bank* bankPtr);
-    WaitingQueue();
+    WaitingQueue(){};
     ~WaitingQueue();
     int maxLength();
     double meanLength();

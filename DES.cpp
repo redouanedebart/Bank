@@ -13,7 +13,9 @@ DES::~DES() {}
  *
  * @return the current time in the simulation
  */
-double DES::getTime() {}
+double DES::getTime() {//TODO: finish this method ( clock for the sim)
+    return 1;
+}
 
 
 void DES::Run() {}

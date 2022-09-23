@@ -11,6 +11,7 @@ Event::Event(double triggerTime) {
     _time = triggerTime;
 }
 
+
 Event::~Event() {}
 
 double Event::getTime() {

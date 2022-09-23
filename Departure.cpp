@@ -3,8 +3,6 @@
 //
 #include "Departure.h"
 
-Departure::Departure(){} //no default constructor, check how to do that
-
 Departure::~Departure() {}
 
 /**

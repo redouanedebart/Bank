@@ -20,7 +20,7 @@ class WaitingQueue;
 class Cashier;
 class Bank: public DES{
 protected:
-    WaitingQueue _queue;
+    WaitingQueue* _queue;
     int _cashierCount;
     int _clientCount;
     std::list<Cashier*> _cashierList;

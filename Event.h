@@ -14,6 +14,7 @@ protected:
     double _time;
 public:
     Event(double triggerTime);
+    Event(){};
     ~Event();
     virtual void handle(); //method used to treat event, redefined in each subclass
     double getTime(); //return the time at which the event occurs (triggerTime)

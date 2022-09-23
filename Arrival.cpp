@@ -3,14 +3,12 @@
 //
 #include "Arrival.h"
 
-Arrival::Arrival() {} //TODO: check implementation of derived classes in poste project,
-                    //for this class and departure class
 
 /**
  * Copy constructor
  * @param arrival reference to an arrival object
  */
-Arrival::Arrival(Arrival &arrival) {
+Arrival::Arrival(Arrival &arrival){
     _time = arrival._time;
 }
 

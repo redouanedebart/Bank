@@ -12,7 +12,9 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _meanTimeBetweenArrivals = meanTimeBtwArrivals;
     list<Cashier*> cl;
     _cashierList = cl;
-    _queue = WaitingQueue(this);
+    WaitingQueue queue;
+    queue = WaitingQueue(this);
+    _queue = &queue;
 }
 
 Bank::Bank(const Bank &b) {
