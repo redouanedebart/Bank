@@ -9,15 +9,20 @@
 #define BANK_BANK_H
 
 //--------Header files included----//
+#include "DES.h"
 #include <iostream>
 #include<list>
 #include "Cashier.h"
-#include "DES.h"
+#include "WaitingQueue.h"
 
 //--------Class Prototypes--------//
+class WaitingQueue;
+class Cashier;
 class Bank: public DES{
 protected:
+    WaitingQueue _queue;
     int _cashierCount;
+    int _clientCount;
     std::list<Cashier*> _cashierList;
     double _expectedDuration;
     double _meanTimeBetweenArrivals;
@@ -30,6 +35,8 @@ public:
     double actualDuration();
     int clientsCount();
     Cashier* firstFreeCashier(); //we need to get null if no one is free, so we use a ptr
+    void addCashiers();
+    void addQueue();
 };
 
 #endif //BANK_BANK_H

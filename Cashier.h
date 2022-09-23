@@ -14,6 +14,7 @@
 #include "Bank.h"
 
 //--------Class Prototypes--------//
+class Bank;
 class Cashier{
 protected:
     double _serviceTime; // the mean service duration for this cashier

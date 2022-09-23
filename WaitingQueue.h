@@ -15,6 +15,8 @@
 #include "Client.h"
 
 //--------Class Prototypes--------//
+class Bank;
+class Client;
 class WaitingQueue{
 protected:
     std::queue<Client> _queue;
@@ -25,6 +27,7 @@ protected:
     double _meanLength;
 public:
     WaitingQueue(Bank* bankPtr);
+    WaitingQueue();
     ~WaitingQueue();
     int maxLength();
     double meanLength();

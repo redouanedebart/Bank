@@ -2,7 +2,7 @@
 // Created by redouane on 08/09/22.
 //
 #include "Cashier.h"
-
+#include "Bank.h"
 /**
  * Cashier constructor. Will be called by Bank constructor
  * @param meanServiceDuration it is a param since it should be different for every cashier
