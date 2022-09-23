@@ -35,7 +35,7 @@ public:
     double actualDuration();
     int clientsCount();
     Cashier* firstFreeCashier(); //we need to get null if no one is free, so we use a ptr
-    void addCashiers();
+    void addCashier(double msd);
     void addQueue();
 };
 

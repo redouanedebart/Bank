@@ -38,23 +38,28 @@ int Bank::cashierCount() {
 }
 
 int Bank::clientsCount() {
+    int clientCount;
+    for (int i = 0; i < _cashierList.size(); ++i) {
+        clientCount += (_cashierList.front()+i)->clientCount();
+    }
     return _clientCount;
 }
 
 Cashier *Bank::firstFreeCashier() {
-    return _cashierList.front();
+    for (int i = 0; i < _cashierList.size(); ++i) {
+        if((_cashierList.front()+i)->isFree())
+            return (_cashierList.front()+i);
+    }
+    return NULL;
 }
 
 double Bank::timeBetweenArrival() {
     return _meanTimeBetweenArrivals;
 }
 
-void Bank::addCashiers() {
-    for(int i = 0; i< _cashierCount; i++) {//TODO: finish this initialization
-        double msd = 0;//how do we determine the duration ? loi de poisson ?
-        Cashier cshi(msd, this); //I don't know why I get this error no matching constructor
-        _cashierList.push_back(&cshi);
-    }
+void Bank::addCashier(double msd) {
+    Cashier cshi(msd, this);
+    _cashierList.push_back(&cshi);
 }
 
 //TODO check if we have to redefine DES methods
