@@ -10,17 +10,21 @@
 
 //--------Header files included----//
 #include "Event.h"
+#include<list>
 #include<chrono>
 #include <ctime>
 #include <random>
 
 //--------Class Prototypes--------//
+class Event;
+
 class DES{
 protected:
     double _startTime;
     double _stopTime;
     double _diffTime;
     std::default_random_engine _generator;
+    str::list<Event> _evtList;
 public:
     DES(){};
     ~DES();

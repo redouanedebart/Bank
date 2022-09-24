@@ -12,6 +12,7 @@
 //--------Class Prototypes--------//
 class Arrival: Event{
 protected:
+    Bank* _simPtr;
 public:
     Arrival(){};
     Arrival(double triggerTime, Bank* simPtr);

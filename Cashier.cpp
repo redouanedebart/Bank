@@ -69,6 +69,7 @@ double Cashier::occupationRate() {
 void Cashier::serve(Client client) {
     _clientCounter ++;
     _free = false;
+    _bank->getTime();
 }
 
 /**

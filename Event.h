@@ -11,9 +11,11 @@
 #include "DES.h"
 
 //--------Class Prototypes--------//
+class DES;
+
 class Event{
 protected:
-    Bank* _simPtr;
+    DES* _simPtr;
     double _time;
 public:
     Event(double triggerTime, DES *simPtr);

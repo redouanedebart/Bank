@@ -7,6 +7,7 @@
 
 //--------Header files included----//
 #include "Event.h"
+#include "Client.h"
 
 //--------Class Prototypes--------//
 class Departure: Event{
