@@ -12,6 +12,7 @@
 #include "Event.h"
 #include<chrono>
 #include <ctime>
+#include <random>
 
 //--------Class Prototypes--------//
 class DES{
@@ -19,11 +20,12 @@ protected:
     double _startTime;
     double _stopTime;
     double _diffTime;
+    std::default_random_engine _generator;
 public:
     DES(){};
     ~DES();
     void addEvent(Event e);
-    void Run();
+    void run();
     double getTime();//the time clock for the rest of the program
 };
 #endif //BANK_DES_H

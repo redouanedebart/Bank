@@ -6,14 +6,14 @@
 Departure::~Departure() {}
 
 /**
- * if the waiting queue is empty, the cashier waits, else, the first client is served
+ * if the waiting getWaitingQueue is empty, the cashier waits, else, the first client is served
  */
 // void Departure::handle() {}
 void Departure::handle() {
   /**
   * MODIFICATIONS FAITES PAR MATTHIEU (24/09/2022)
   * 
-  * Considérons la file d'attente WaitingQueue queue (à récupérer dans la bank)
+  * Considérons la file d'attente WaitingQueue getWaitingQueue (à récupérer dans la bank)
   * 
   */
   
@@ -21,7 +21,7 @@ void Departure::handle() {
   * Remarque: Dans Bank.cpp, une nouvelle fonction a été ajoutée
   * Cette fonction renvoit la file d'attente "_queue" qui se trouve dans la bank
   */
-  WaitingQueue queue = bank.queue();
+  WaitingQueue queue = bank.getWaitingQueue();
   
   // Si la file d'attente est vide
   if(queue.isEmpty()){

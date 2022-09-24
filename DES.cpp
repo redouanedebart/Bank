@@ -22,7 +22,7 @@ double DES::getTime() {//TODO: finish this method ( clock for the sim)
 /**
  * starts the clock
  */
-void DES::Run() {
+void DES::run() {
     _startTime = clock();
 }
 

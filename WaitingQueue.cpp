@@ -6,7 +6,7 @@
 /**
  * WaitingQueue constructor, will be called by Bank()
  * @param bankPtr Pointer on the bank so we can access important information
- * Creates a queue.
+ * Creates a getWaitingQueue.
  */
 WaitingQueue::WaitingQueue(Bank* bankPtr) {
     _bank = bankPtr;
@@ -22,18 +22,18 @@ bool WaitingQueue::isEmpty() {
 }
 /**
  * Accessor to the _maxLength field
- * @return the maximum length the queue has had
+ * @return the maximum length the getWaitingQueue has had
  */
 int WaitingQueue::maxLength() {
     return _maxLength;
 }
 
 //At which moment do we check the
-// size of the queue ? each event ? should we store the values ?
+// size of the getWaitingQueue ? each event ? should we store the values ?
 /**
  * Accessor to the _meanLength field.
  * The field is updated at every event timing
- * @return the mean length of the queue
+ * @return the mean length of the getWaitingQueue
  */
 double WaitingQueue::meanLength() {
     return _meanLength;
@@ -41,7 +41,7 @@ double WaitingQueue::meanLength() {
 
 /**
  * accessor to the _meanWaitingTime field
- * @return the mean waiting time for a client in the queue
+ * @return the mean waiting time for a client in the getWaitingQueue
  */
 double WaitingQueue::meanWaitingTime() {
     return _meanWaitingTime;
@@ -52,7 +52,7 @@ void WaitingQueue::addClient(Client& c) {
 }
 
 /**
- * pop the first client of the queue
+ * pop the first client of the getWaitingQueue
  * @return the client going to be served
  */
 Client *WaitingQueue::remove() {

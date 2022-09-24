@@ -12,20 +12,18 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _meanTimeBetweenArrivals = meanTimeBtwArrivals;
     list<Cashier*> cl;
     _cashierList = cl;
-    WaitingQueue queue;
-    queue = WaitingQueue(this);
-    _queue = &queue;
+    _queue = NULL;
 }
 
 /**
 * FONCTION AJOUTEE PAR MATTHIEU (24/09/2022)
-* Cette renvoi la file d'attente "queue" présente dans la bank
+* Cette renvoi la file d'attente "getWaitingQueue" présente dans la bank
  * modif par Rédouane: n'oublie pas d'ajouter le prototype dans le header la prochaine fois
  * Changed type to WaitingQueue Ptr, added the prototype in header file
- * Forward declaration of class WaitingQueue only allows us to get a ptr to the queue
+ * Forward declaration of class WaitingQueue only allows us to get a ptr to the getWaitingQueue
  * (That's what we wanted from the beginning, so, no worries)
 */
-WaitingQueue *Bank::queue(){
+WaitingQueue *Bank::getWaitingQueue(){
     return _queue;
 }
 
@@ -51,12 +49,15 @@ int Bank::cashierCount() {
     return _cashierCount;
 }
 
-int Bank::clientsCount() {
+void Bank::clientsCount() {
     int clientCount;
+    cout<<"Client count: \n\tper cashier:\n\t";
     for (int i = 0; i < _cashierList.size(); ++i) {
         clientCount += (_cashierList.front()+i)->clientCount();
+        cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->clientCount()<<endl;
     }
-    return _clientCount;
+    cout<<"Client count: total: "<<clientCount;
+
 }
 
 Cashier *Bank::firstFreeCashier() {
@@ -72,8 +73,21 @@ double Bank::timeBetweenArrival() {
 }
 
 void Bank::addCashier(double msd) {
-    Cashier cshi(msd, this);
-    _cashierList.push_back(&cshi);
+    Cashier cashier(msd, this);
+    _cashierList.push_back(&cashier);
 }
 
+void Bank::addQueue() {
+    WaitingQueue queue(this);
+    _queue = &queue;
+}
+
+void Bank::cashierOccupationRate() {
+
+    cout<<"Cashiers occupation rate:\n\t";
+    for (int i = 0; i < _cashierList.size(); ++i) {
+
+        cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->occupationRate()<<endl;
+    }
+}
 //TODO check if we have to redefine DES methods

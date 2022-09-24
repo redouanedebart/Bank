@@ -33,11 +33,12 @@ public:
     int cashierCount();
     double timeBetweenArrival();
     double actualDuration();
-    int clientsCount();
-    Cashier* firstFreeCashier(); //we need to get null if no one is free, so we use a ptr
+    void clientsCount();
+    Cashier* firstFreeCashier();
     void addCashier(double msd);
     void addQueue();
-    WaitingQueue* queue();
+    WaitingQueue* getWaitingQueue();
+    void cashierOccupationRate();
 };
 
 #endif //BANK_BANK_H

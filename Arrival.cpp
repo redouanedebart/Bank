@@ -16,7 +16,7 @@ Arrival::~Arrival() {}
 
 /**
  * If any Cashier is available, the client goes to the first Cashier available,
- * else, the client is added to the queue
+ * else, the client is added to the getWaitingQueue
  */
 void Arrival::handle() {
   
@@ -45,7 +45,7 @@ void Arrival::handle() {
       // Le caissier n'est plus libre
       cashier_i._free = 'false';
       
-      // QUESTION: Faut-il modifier le "_serviceTime" (mean meanServiceDuration)
+      // QUESTION: Faut-il modifier le "_serviceDuration" (mean meanServiceDuration)
       
       // ...
       
@@ -60,8 +60,8 @@ void Arrival::handle() {
     // Il faut ajouter le client à la File d'Attente (WaitingQueue)
     
     // QUESTION: Où se trouve la File D'attente (ex: dans Bank.cpp, Client.cpp, Caishier.cpp, ...)?
-    // A REVOIR (pour "queue" et "client")
-    // queue.addClient(client)
+    // A REVOIR (pour "getWaitingQueue" et "client")
+    // getWaitingQueue.addClient(client)
     
   }
 }

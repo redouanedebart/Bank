@@ -12,7 +12,7 @@
  */
 
 Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
-    _serviceTime = meanServiceDuration;
+    _serviceDuration = meanServiceDuration;
     _free = true;
     _clientCounter = 0;
 }
@@ -21,7 +21,7 @@ Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
  * @param c
  */
 Cashier::Cashier(const Cashier &c) {
-    _serviceTime = c._serviceTime;
+    _serviceDuration = c._serviceDuration;
     _clientCounter = c._clientCounter;
     _free = c._free;
     _bank = c._bank;
@@ -48,7 +48,7 @@ bool Cashier::isFree() {
  * @return mean service duration of this cashier
  */
 double Cashier::meanServiceTime() {
-    return _serviceTime;
+    return _serviceDuration;
 }
 
 /**
@@ -57,5 +57,5 @@ double Cashier::meanServiceTime() {
  * of occupation of this cashier.
  */
 double Cashier::occupationRate() {
-    return (_clientCounter * _serviceTime)/_bank->actualDuration();
+    return (_clientCounter * _serviceDuration) / _bank->actualDuration();
 }
