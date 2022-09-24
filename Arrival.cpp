@@ -1,8 +1,19 @@
 //
 // Created by redouane on 09/09/22.
 //
+//--------Header files included----//
 #include "Arrival.h"
-
+#include <iostream>
+//--------Class Implementation--------//
+/**
+ *
+ * @param triggerTime to know when the event happens
+ * @param simPtr points to bank so we can access the cashiers
+ */
+Arrival::Arrival(double triggerTime, Bank *simPtr): Event(){
+    _time = triggerTime;
+    _simPtr = simPtr;
+}
 
 /**
  * Copy constructor
@@ -19,43 +30,37 @@ Arrival::~Arrival() {}
  * else, the client is added to the getWaitingQueue
  */
 void Arrival::handle() {
-  
-  // MODIFICATION APPORTEES PAR MATTHIEU SAUVAGEOT (19/09/2022)
-  
-  // Parcours de la liste _cashierList (voir Bank.h)
-  for(i=0; i< _cashierList.size();i++){
-    
-    // Récupération du caissier i
-    Cashier cashier_i = _cashierList[i];
-    
+
+    Client client(_time); //create the client
+
+    //check if there is a free cashier to serve the client
+    if(!_simPtr.firstFreeCashier()) {
+        std::cout << "no free cashier for the moment, the client goes to the waiting queue" << std::endl;
+        _simPtr.getWaitingQueue()->addClient(&client) ;
+    }else {
+        _simPtr.firstFreeCashier()->add
+    }
     // Vérifier si le caissier est libre
-    if(cashier_i.isFree()){
       // Le caissier en question commence à s'occuper du client
       // ...
       
       // On récupère le nombre de clients servis par le caissier jusqu'à présent
-      int nbClients = caissier_i.clientCount();
-      
       // Incrémentation du nombre de clients servis par le caissier
-      nbClients+=1;
-      
+
       // Attribution de la nouvelle valeur pour le nombre de clients servis par le caissier
-      cashier_i._clientCounter = nbClients;
-      
+
       // Le caissier n'est plus libre
-      cashier_i._free = 'false';
-      
+
       // QUESTION: Faut-il modifier le "_serviceDuration" (mean meanServiceDuration)
       
       // ...
       
       // Mise à jour de la liste (modification du caissier i)
-      cashierList[i] = cashier_i;
-      
+
       // Après avoir modifier le caissier i, on sort de la boucle "for"
-      exit 0;
+
       
-    }
+}
     // S'il n'y a pas de caissier libre
     // Il faut ajouter le client à la File d'Attente (WaitingQueue)
     
@@ -63,5 +68,5 @@ void Arrival::handle() {
     // A REVOIR (pour "getWaitingQueue" et "client")
     // getWaitingQueue.addClient(client)
     
-  }
-}
+
+

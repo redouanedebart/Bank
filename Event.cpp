@@ -7,8 +7,9 @@
  * Constructor for Event class
  * @param triggerTime
  */
-Event::Event(double triggerTime) {
+Event::Event(double triggerTime, DES *simPtr) {
     _time = triggerTime;
+    _simPtr = simPtr;
 }
 
 

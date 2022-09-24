@@ -1,8 +1,10 @@
 //
 // Created by redouane on 08/09/22.
 //
+//--------Header files included----//
 #include "Cashier.h"
-#include "Bank.h"
+
+//--------Class Implementation--------//
 /**
  * Cashier constructor. Will be called by Bank constructor
  * @param meanServiceDuration it is a param since it should be different for every cashier
@@ -58,4 +60,20 @@ double Cashier::meanServiceTime() {
  */
 double Cashier::occupationRate() {
     return (_clientCounter * _serviceDuration) / _bank->actualDuration();
+}
+
+/**
+ *
+ * @param client
+ */
+void Cashier::serve(Client client) {
+    _free = false;
+
+}
+
+/**
+ *
+ */
+void Cashier::wait() {
+    _free = true;
 }

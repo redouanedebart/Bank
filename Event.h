@@ -7,13 +7,16 @@
 //--------Header Guard-----------//
 #ifndef BANK_EVENT_H
 #define BANK_EVENT_H
+//--------Header files included----//
+#include "DES.h"
 
 //--------Class Prototypes--------//
 class Event{
 protected:
+    Bank* _simPtr;
     double _time;
 public:
-    Event(double triggerTime);
+    Event(double triggerTime, DES *simPtr);
     Event(){};
     ~Event();
     virtual void handle(); //method used to treat event, redefined in each subclass

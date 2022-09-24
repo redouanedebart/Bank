@@ -7,12 +7,14 @@
 
 //--------Header files included----//
 #include "Event.h"
-
+#include "Bank.h"
+#include "Client.h"
 //--------Class Prototypes--------//
 class Arrival: Event{
 protected:
 public:
-    Arrival();
+    Arrival(){};
+    Arrival(double triggerTime, Bank* simPtr);
     Arrival(Arrival& arrival);
     ~Arrival();
     void handle();//Creates a client
