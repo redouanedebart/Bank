@@ -17,6 +17,14 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _queue = &queue;
 }
 
+/**
+* FONCTION AJOUTEE PAR MATTHIEU (24/09/2022)
+* Cette renvoi la file d'attente "queue" présente dans la bank
+*/
+WaitingQueue Bank::queue(){
+    return _queue;
+}
+
 Bank::Bank(const Bank &b) {
     _clientCount = b._clientCount;
     _cashierCount = b._cashierCount;
