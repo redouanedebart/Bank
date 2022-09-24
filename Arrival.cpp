@@ -36,9 +36,9 @@ void Arrival::handle() {
     //check if there is a free cashier to serve the client
     if(!_simPtr.firstFreeCashier()) {
         std::cout << "no free cashier for the moment, the client goes to the waiting queue" << std::endl;
-        _simPtr.getWaitingQueue()->addClient(&client) ;
+        _simPtr->getWaitingQueue()->addClient(&client) ;
     }else {
-        _simPtr.firstFreeCashier()->add
+        _simPtr->firstFreeCashier()->serve(client);
     }
     // Vérifier si le caissier est libre
       // Le caissier en question commence à s'occuper du client

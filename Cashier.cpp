@@ -68,12 +68,15 @@ double Cashier::occupationRate() {
  */
 void Cashier::serve(Client client) {
     _free = false;
-
 }
 
 /**
- *
+ * if there is no one to serve,
+ *the cashier waits until there is a client to serve
  */
 void Cashier::wait() {
-    _free = true;
+    if(_bank->getWaitingQueue()->isEmpty())
+        _free = true;
+    else
+        serve(*(_bank->getWaitingQueue()->remove()));
 }
