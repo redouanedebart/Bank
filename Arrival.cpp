@@ -40,33 +40,8 @@ void Arrival::handle() {
     }else {
         _simPtr->firstFreeCashier()->serve(client);
     }
-    // Vérifier si le caissier est libre
-      // Le caissier en question commence à s'occuper du client
-      // ...
-      
-      // On récupère le nombre de clients servis par le caissier jusqu'à présent
-      // Incrémentation du nombre de clients servis par le caissier
-
-      // Attribution de la nouvelle valeur pour le nombre de clients servis par le caissier
-
-      // Le caissier n'est plus libre
-
-      // QUESTION: Faut-il modifier le "_serviceDuration" (mean meanServiceDuration)
-      
-      // ...
-      
-      // Mise à jour de la liste (modification du caissier i)
-
-      // Après avoir modifier le caissier i, on sort de la boucle "for"
-
-      
 }
-    // S'il n'y a pas de caissier libre
-    // Il faut ajouter le client à la File d'Attente (WaitingQueue)
-    
-    // QUESTION: Où se trouve la File D'attente (ex: dans Bank.cpp, Client.cpp, Caishier.cpp, ...)?
-    // A REVOIR (pour "getWaitingQueue" et "client")
-    // getWaitingQueue.addClient(client)
+
     
 
 

@@ -67,6 +67,7 @@ double Cashier::occupationRate() {
  * @param client
  */
 void Cashier::serve(Client client) {
+    _clientCounter ++;
     _free = false;
 }
 
