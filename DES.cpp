@@ -4,7 +4,7 @@
 
 #include "DES.h"
 
-DES::DES() {}
+using namespace std;
 
 DES::~DES() {}
 
@@ -14,11 +14,17 @@ DES::~DES() {}
  * @return the current time in the simulation
  */
 double DES::getTime() {//TODO: finish this method ( clock for the sim)
-    return 1;
+    _stopTime = clock();
+    _diffTime = _startTime - _stopTime;
+    return _diffTime;
 }
 
-
-void DES::Run() {}
+/**
+ * starts the clock
+ */
+void DES::Run() {
+    _startTime = clock();
+}
 
 /**
  * Adds an Event to the event list ?

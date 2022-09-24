@@ -10,12 +10,17 @@
 
 //--------Header files included----//
 #include "Event.h"
+#include<chrono>
+#include <ctime>
 
 //--------Class Prototypes--------//
 class DES{
 protected:
+    double _startTime;
+    double _stopTime;
+    double _diffTime;
 public:
-    DES();
+    DES(){};
     ~DES();
     void addEvent(Event e);
     void Run();
