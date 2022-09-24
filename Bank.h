@@ -37,6 +37,7 @@ public:
     Cashier* firstFreeCashier(); //we need to get null if no one is free, so we use a ptr
     void addCashier(double msd);
     void addQueue();
+    WaitingQueue* queue();
 };
 
 #endif //BANK_BANK_H

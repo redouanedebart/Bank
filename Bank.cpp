@@ -20,8 +20,12 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
 /**
 * FONCTION AJOUTEE PAR MATTHIEU (24/09/2022)
 * Cette renvoi la file d'attente "queue" présente dans la bank
+ * modif par Rédouane: n'oublie pas d'ajouter le prototype dans le header la prochaine fois
+ * Changed type to WaitingQueue Ptr, added the prototype in header file
+ * Forward declaration of class WaitingQueue only allows us to get a ptr to the queue
+ * (That's what we wanted from the beginning, so, no worries)
 */
-WaitingQueue Bank::queue(){
+WaitingQueue *Bank::queue(){
     return _queue;
 }
 
