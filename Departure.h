@@ -8,10 +8,12 @@
 //--------Header files included----//
 #include "Event.h"
 #include "Client.h"
+#include "Bank.h"
 
 //--------Class Prototypes--------//
 class Departure: Event{
 protected:
+    Bank* _simPtr;
 public:
     Departure();
     ~Departure();

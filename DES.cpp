@@ -5,7 +5,6 @@
 #include "DES.h"
 
 using namespace std;
-//idea to simulate the time between clients arrival: use an exponential distribution to get a poisson process
 // lambda = 1/meanTimeBetweenArrival
 DES::~DES() {}
 
@@ -25,6 +24,14 @@ double DES::getTime() {
  */
 void DES::run() {
     _startTime = clock();
+    //TODO: simulate the time between clients arrival:
+    // use an exponential distribution to get a poisson process
+    //addEvent(e) according to timings obtained, while triggerTime <= expected duration
+    while(!_evtQueue.empty()){
+        _evtQueue.front()->handle();
+        _evtQueue.pop();
+    }
+    _diffTime = getTime();
 }
 
 /**
@@ -32,5 +39,5 @@ void DES::run() {
  * @param e is an Event (arrival or departure)
  */
 void DES::addEvent(Event e) {
-    _evtList.push_back(e);
+    _evtQueue.push(&e);
 }

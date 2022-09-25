@@ -10,7 +10,7 @@
 
 //--------Header files included----//
 #include "Event.h"
-#include<list>
+#include<queue>
 #include<chrono>
 #include <ctime>
 #include <random>
@@ -24,7 +24,7 @@ protected:
     double _stopTime;
     double _diffTime;
     std::default_random_engine _generator;
-    str::list<Event> _evtList;
+    str::queue<Event*> _evtQueue;
 public:
     DES(){};
     ~DES();

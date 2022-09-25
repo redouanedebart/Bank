@@ -5,9 +5,7 @@
 
 Departure::~Departure() {}
 
-/**
- * if the waiting getWaitingQueue is empty, the cashier waits, else, the first client is served
- */
+
 // void Departure::handle() {}
 void Departure::handle() {
   /**
@@ -32,7 +30,7 @@ void Departure::handle() {
   else{
     // Le premier client qui arrive est servi par le caissier
     // ...
-    
+
     // Remarque: Je pense qu'il faudra utiliser la fonction "handle()" de Arrival.cpp, quand elle sera prête.
   }
 }
