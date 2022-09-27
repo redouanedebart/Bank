@@ -14,7 +14,8 @@
 #include <ctime>
 #include <random>
 #include <cstdlib>
-
+#include <list>
+#include "Event.h"
 //--------Class Prototypes--------//
 
 class Event;
@@ -24,7 +25,11 @@ protected:
     double _startTime;
     double _stopTime;
     double _diffTime;
+    //std::priority_queue<Event*, std::vector<Event*>, decltype(&Compare)> _evtQueue;
+    //uncomment event.h too
     std::queue<Event*> _evtQueue;
+    std::queue<double> _arrivalTimings;
+
 public:
     DES(){};
     ~DES();

@@ -9,9 +9,9 @@
 #define BANK_EVENT_H
 
 //--------Header files included----//
-#include "DES.h"
 
 //--------Class Prototypes--------//
+class DES;
 
 class Event{
 protected:
@@ -24,4 +24,13 @@ public:
     virtual void handle(); //method used to treat event, redefined in each subclass
     double getTime(); //return the time at which the event occurs (triggerTime)
 };
+
+/*class Compare
+{
+public:
+    bool operator() (Event *a, Event *b)
+    {
+        return a->getTime()<b->getTime();
+    }
+};*/
 #endif //BANK_EVENT_H

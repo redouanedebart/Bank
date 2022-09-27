@@ -3,7 +3,7 @@
 //
 //--------Header files included----//
 #include "Bank.h"
-
+#include "Arrival.h"
 //--------Class Implementation--------//
 
 using namespace std;
@@ -20,7 +20,10 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _meanTimeBetweenArrivals = meanTimeBtwArrivals;
     list<Cashier*> cl;
     _cashierList = cl;
-    _queue = NULL;
+    _queue = nullptr;
+    this->generateTimings(meanTimeBtwArrivals, expDur);
+    Arrival arrival(_arrivalTimings.front(), this);
+    addEvent(arrival);
 }
 
 /**
@@ -35,12 +38,16 @@ WaitingQueue *Bank::getWaitingQueue(){
     return _queue;
 }
 
-Bank::Bank(const Bank &b) {
+Bank::Bank(const Bank &b): DES() {
     _clientCount = b._clientCount;
     _cashierCount = b._cashierCount;
     _expectedDuration = b._expectedDuration;
     _meanTimeBetweenArrivals = b._meanTimeBetweenArrivals;
     _cashierList = b._cashierList;
+    _queue = b._queue;
+    _evtQueue = b._evtQueue;
+    _arrivalTimings = b._arrivalTimings;
+
 }
 
 /**
@@ -51,13 +58,20 @@ double Bank::expectedDuration() {
     return _expectedDuration;
 }
 
-//TODO changes this function when it will be possible
 /**
  *
  * @return the time when the simulation is finished, ie when all clients have been served
  */
 double Bank::actualDuration() {
-    return 1;
+    if (getTime()>expectedDuration()){
+        if (_evtQueue.empty()){
+            if (allCashiersFree()) {
+                return getTime();
+            } else{
+                cout << "A cashier is still busy" << endl;
+            }
+        }
+    }
 }
 
 /**
@@ -133,4 +147,16 @@ void Bank::cashierOccupationRate() {
 
         cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->occupationRate()<<endl;
     }
+}
+
+/**
+ *
+ * @return true if all cashiers are free
+ */
+bool Bank::allCashiersFree() {
+    for (int i = 0; i < _cashierCount; ++i) {
+        if (! ( (_cashierList.front()+i)->isFree() ) ) //if a cashier is busy, returns false
+            return false;
+    }
+    return true;
 }

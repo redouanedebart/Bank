@@ -57,8 +57,7 @@ double DES::generateEffectiveServiceTime(double value) {
 }
 
 /**
- * Generating timings of Events using a poisson process,
- * events are then created in this function and stored in event queue field
+ * Generating timings of Events (arrivals) using a poisson process,
  *
  * @param meanTimeBetweenArrival the mean time between arrivals
  *
@@ -77,11 +76,11 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
     double sumArrivalTimes=0;
     double newArrivalTime;
 
-    while(sumArrivalTimes<=expectedDur)
+    while(sumArrivalTimes <= expectedDur)
     {
         newArrivalTime=  exp.operator() (rng);// generates the next random number in the distribution
         sumArrivalTimes  += newArrivalTime;
-        //TODO: create events and add them to the queue
+        _arrivalTimings.push(sumArrivalTimes);
     }
 }
 

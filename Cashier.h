@@ -11,7 +11,6 @@
 //--------Header files included----//
 #include <iostream>
 #include "Client.h"
-#include "Departure.h"
 #include "Bank.h"
 
 //--------Class Prototypes--------//

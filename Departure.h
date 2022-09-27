@@ -14,12 +14,12 @@
 class Cashier;
 //--------Class Prototypes--------//
 
-class Departure: Event{
+class Departure: public Event{
 protected:
     Client* _clientPtr;
     Cashier* _cashierPtr;
 public:
-    Departure(Client* c, Cashier* cash);
+    Departure(Client* c, Cashier* cash, double time);
     Departure(){};
     ~Departure();
     void handle();

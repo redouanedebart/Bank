@@ -3,7 +3,7 @@
 //
 //--------Header files included----//
 #include "Cashier.h"
-
+#include "Departure.h"
 //--------Class Implementation--------//
 
 /**
@@ -72,7 +72,8 @@ void Cashier::serve(Client client) {
     _free = false;
     time = _bank->getTime();
     time += _bank->generateEffectiveServiceTime(_serviceDuration);
-    Departure departure(); //TODO: finish this
+    Departure departure(&client, this, time); //TODO: finish this
+    _bank->addEvent(departure);
 }
 
 /**

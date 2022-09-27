@@ -9,12 +9,13 @@
   * Constructor for the class Departure
   * @param c the client concerned by this Event
   * @param cash the cashier concerned
+  * @param time trigger time of the event
   * NOTE: Both the parameters are pointers
   */
-Departure::Departure(Client* c, Cashier* cash){
+Departure::Departure(Client* c, Cashier* cash, double time){
     _clientPtr = c;
     _cashierPtr = cash;
-
+    _time = time;
 }
 
 /**

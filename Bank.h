@@ -40,6 +40,7 @@ public:
     void addQueue();
     WaitingQueue* getWaitingQueue();
     void cashierOccupationRate();
+    bool allCashiersFree();
 };
 
 #endif //BANK_BANK_H

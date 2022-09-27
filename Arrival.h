@@ -12,7 +12,7 @@
 
 //--------Class Prototypes--------//
 
-class Arrival: Event{
+class Arrival: public Event{
 protected:
     Bank* _simPtr;
 public:
