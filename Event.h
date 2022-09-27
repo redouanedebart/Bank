@@ -13,8 +13,6 @@
 
 //--------Class Prototypes--------//
 
-class DES;
-
 class Event{
 protected:
     DES* _simPtr;

@@ -14,8 +14,6 @@
 #include <ctime>
 #include <random>
 #include <cstdlib>
-#include "Arrival.h"
-#include "Departure.h"
 
 //--------Class Prototypes--------//
 

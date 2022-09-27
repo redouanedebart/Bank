@@ -3,7 +3,7 @@
 //
 //--------Header files included----//
 #include "DES.h"
-
+#include "Event.h"
 //--------Class Implementation--------//
 
 using namespace std;
