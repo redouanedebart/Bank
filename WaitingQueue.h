@@ -35,6 +35,5 @@ public:
     void addClient(Client& c);
     bool isEmpty();
     Client* remove();
-
 };
 #endif //BANK_WAITINGQUEUE_H

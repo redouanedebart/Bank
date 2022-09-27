@@ -11,8 +11,6 @@
 #include "Bank.h"
 #include "Cashier.h"
 
-//--------Forward Declaration ----//
-
 class Cashier;
 //--------Class Prototypes--------//
 

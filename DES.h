@@ -16,7 +16,9 @@
 #include <cstdlib>
 #include "Arrival.h"
 #include "Departure.h"
+
 //--------Class Prototypes--------//
+
 class Event;
 
 class DES{

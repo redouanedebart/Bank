@@ -18,6 +18,7 @@
 //--------Class Prototypes--------//
 class WaitingQueue;
 class Cashier;
+
 class Bank: public DES{
 protected:
     WaitingQueue* _queue;

@@ -7,10 +7,12 @@
 //--------Header Guard-----------//
 #ifndef BANK_EVENT_H
 #define BANK_EVENT_H
+
 //--------Header files included----//
 #include "DES.h"
 
 //--------Class Prototypes--------//
+
 class DES;
 
 class Event{
