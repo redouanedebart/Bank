@@ -11,7 +11,7 @@
 //--------Header files included----//
 #include "DES.h"
 #include <iostream>
-#include<list>
+#include <list>
 #include "Cashier.h"
 #include "WaitingQueue.h"
 

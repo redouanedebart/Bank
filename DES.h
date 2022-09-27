@@ -9,12 +9,13 @@
 #define BANK_DES_H
 
 //--------Header files included----//
-#include "Event.h"
 #include<queue>
 #include<chrono>
 #include <ctime>
 #include <random>
 #include <cstdlib>
+#include "Arrival.h"
+#include "Departure.h"
 //--------Class Prototypes--------//
 class Event;
 
@@ -29,7 +30,7 @@ public:
     ~DES();
     void addEvent(Event e);
     double generateEffectiveServiceTime(double value);
-    void generateTimings();
+    void generateTimings(double meanTimeBetweenArrival, double expectedDur);
     double getTime();//the time clock for the rest of the program
     void run();
 };

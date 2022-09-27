@@ -1,7 +1,7 @@
 #makefile
 CC = g++
 CFLAGS =
-BANK = DES.o Event.o Arrival.o Cashier.o Client.o Departure.o  WaitingQueue.o Bank.o main.o
+BANK = DES.o Bank.o Event.o Arrival.o Cashier.o Client.o Departure.o  WaitingQueue.o main.o
 all: $(BANK)
 	$(CC) -o bank $(BANK) $(CFLAGS)
 clean:

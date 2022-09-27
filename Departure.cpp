@@ -1,7 +1,10 @@
 //
 // Created by redouane on 09/09/22.
 //
+//--------Header files included----//
 #include "Departure.h"
+
+//--------Class Implementation--------//
 
 Departure::Departure(Client* c, Cashier* cash){
     _clientPtr = c;

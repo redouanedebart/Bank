@@ -4,7 +4,9 @@
 //--------Header files included----//
 #include "Arrival.h"
 #include <iostream>
+
 //--------Class Implementation--------//
+
 /**
  *
  * @param triggerTime to know when the event happens

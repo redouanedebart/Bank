@@ -9,7 +9,9 @@
 #include "Event.h"
 #include "Bank.h"
 #include "Client.h"
+
 //--------Class Prototypes--------//
+
 class Arrival: Event{
 protected:
     Bank* _simPtr;

@@ -11,7 +11,11 @@
 #include "Bank.h"
 #include "Cashier.h"
 
+//--------Forward Declaration ----//
+
+class Cashier;
 //--------Class Prototypes--------//
+
 class Departure: Event{
 protected:
     Client* _clientPtr;
