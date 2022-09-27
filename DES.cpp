@@ -41,3 +41,26 @@ void DES::run() {
 void DES::addEvent(Event e) {
     _evtQueue.push(&e);
 }
+
+/**
+ * generate random number in between 70% and 130% of the entry value
+ * this will be used to generate effective service duration of cashiers
+ * @param value mean service duration of cashiers
+ * @return effective duration (between 70% and 130% of value)
+ */
+double DES::generateEffectiveServiceTime(double value) {
+    double higherBound = value * 1.3;
+    double lowerBound = value * 0.7;
+    srand(time(0));
+    double randomNumber;
+    randomNumber = (double)rand() / higherBound;
+    return lowerBound + randomNumber *(higherBound - lowerBound);
+}
+
+/**
+ * Generating timings of Events using a poisson process,
+ * events are then created and stored in event queue field
+ */
+void DES::generateTimings() {
+
+}

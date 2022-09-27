@@ -14,7 +14,7 @@
 #include<chrono>
 #include <ctime>
 #include <random>
-
+#include <cstdlib>
 //--------Class Prototypes--------//
 class Event;
 
@@ -23,13 +23,14 @@ protected:
     double _startTime;
     double _stopTime;
     double _diffTime;
-    std::default_random_engine _generator;
-    str::queue<Event*> _evtQueue;
+    std::queue<Event*> _evtQueue;
 public:
     DES(){};
     ~DES();
     void addEvent(Event e);
-    void run();
+    double generateEffectiveServiceTime(double value);
+    void generateTimings();
     double getTime();//the time clock for the rest of the program
+    void run();
 };
 #endif //BANK_DES_H

@@ -3,34 +3,24 @@
 //
 #include "Departure.h"
 
+Departure::Departure(Client* c, Cashier* cash){
+    _clientPtr = c;
+    _cashierPtr = cash;
+
+}
+
+
 Departure::~Departure() {}
 
 
-// void Departure::handle() {}
+/**
+ * If the waitingQueue is empty, the cashier waits, else he serves the next client
+ * the waitingQueue is accessed via the pointer on bank in the cashier class
+ */
 void Departure::handle() {
-  /**
-  * MODIFICATIONS FAITES PAR MATTHIEU (24/09/2022)
-  * 
-  * Considérons la file d'attente WaitingQueue getWaitingQueue (à récupérer dans la bank)
-  * 
-  */
-  
-  /**
-  * Remarque: Dans Bank.cpp, une nouvelle fonction a été ajoutée
-  * Cette fonction renvoit la file d'attente "_queue" qui se trouve dans la bank
-  */
-  WaitingQueue queue = bank.getWaitingQueue();
-  
-  // Si la file d'attente est vide
-  if(queue.isEmpty()){
-    // Le caissier attend
-    // ...
-  }
-  // Sinon
-  else{
-    // Le premier client qui arrive est servi par le caissier
-    // ...
-
-    // Remarque: Je pense qu'il faudra utiliser la fonction "handle()" de Arrival.cpp, quand elle sera prête.
-  }
+    if (_cashierPtr->getBank()->getWaitingQueue()->isEmpty()) {
+        _cashierPtr->wait();
+    } else {
+        _cashierPtr->serve(*(_cashierPtr->getBank()->getWaitingQueue()->remove()));
+    }
 }

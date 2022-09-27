@@ -9,13 +9,16 @@
 #include "Event.h"
 #include "Client.h"
 #include "Bank.h"
+#include "Cashier.h"
 
 //--------Class Prototypes--------//
 class Departure: Event{
 protected:
-    Bank* _simPtr;
+    Client* _clientPtr;
+    Cashier* _cashierPtr;
 public:
-    Departure();
+    Departure(Client* c, Cashier* cash);
+    Departure(){};
     ~Departure();
     void handle();
 

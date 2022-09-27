@@ -67,9 +67,12 @@ double Cashier::occupationRate() {
  * @param client
  */
 void Cashier::serve(Client client) {
+    double time;
     _clientCounter ++;
     _free = false;
-    _bank->getTime();
+    time = _bank->getTime();
+    time += _bank->generateEffectiveServiceTime(_serviceDuration);
+    Departure departure(); //TODO: finish this
 }
 
 /**
@@ -77,8 +80,9 @@ void Cashier::serve(Client client) {
  *the cashier waits until there is a client to serve
  */
 void Cashier::wait() {
-    if(_bank->getWaitingQueue()->isEmpty())
-        _free = true;
-    else
-        serve(*(_bank->getWaitingQueue()->remove()));
+    _free = true;
+}
+
+Bank *Cashier::getBank() {
+    return _bank;
 }

@@ -61,4 +61,4 @@ Client *WaitingQueue::remove() {
     return c;
 }
 
-WaitingQueue::~WaitingQueue() {}
+WaitingQueue::~WaitingQueue() = default;

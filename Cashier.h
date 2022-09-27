@@ -22,6 +22,7 @@ protected:
     int _clientCounter; //how many clients the cashier served
     bool _free; //true if the cashier is available to serve a client
     Bank* _bank;
+
 public:
     Cashier(double meanServiceDuration, Bank *bankPtr);
     Cashier(const Cashier& c);
@@ -31,7 +32,7 @@ public:
     bool isFree();
     void serve(Client client);
     void wait();
-
+    Bank* getBank();
 };
 
 #endif //BANK_CASHIER_H
