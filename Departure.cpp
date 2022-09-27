@@ -5,16 +5,17 @@
 #include "Departure.h"
 
 //--------Class Implementation--------//
-
+ /**
+  * Constructor for the class Departure
+  * @param c the client concerned by this Event
+  * @param cash the cashier concerned
+  * NOTE: Both the parameters are pointers
+  */
 Departure::Departure(Client* c, Cashier* cash){
     _clientPtr = c;
     _cashierPtr = cash;
 
 }
-
-
-Departure::~Departure() {}
-
 
 /**
  * If the waitingQueue is empty, the cashier waits, else he serves the next client
@@ -27,3 +28,5 @@ void Departure::handle() {
         _cashierPtr->serve(*(_cashierPtr->getBank()->getWaitingQueue()->remove()));
     }
 }
+
+Departure::~Departure() = default;

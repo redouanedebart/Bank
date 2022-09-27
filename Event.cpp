@@ -1,7 +1,10 @@
 //
 // Created by redouane on 09/09/22.
 //
+//--------Header files included----//
 #include "Event.h"
+
+//--------Class Implementation--------//
 
 /**
  * Constructor for Event class
@@ -12,11 +15,17 @@ Event::Event(double triggerTime, DES *simPtr) {
     _simPtr = simPtr;
 }
 
-
-Event::~Event() {}
-
+/**
+ * Accessor to the _time field
+ * @return the trigger time of the Event
+ */
 double Event::getTime() {
     return _time;
 }
 
+/**
+ * virtual method redefined in each subclasses
+ */
 void Event::handle() {}
+
+Event::~Event() = default;

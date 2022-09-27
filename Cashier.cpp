@@ -5,6 +5,7 @@
 #include "Cashier.h"
 
 //--------Class Implementation--------//
+
 /**
  * Cashier constructor. Will be called by Bank constructor
  * @param meanServiceDuration it is a param since it should be different for every cashier
@@ -12,7 +13,6 @@
  * of the simulation
  * Creates a cashier with a given mean service time.
  */
-
 Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
     _serviceDuration = meanServiceDuration;
     _free = true;
@@ -30,7 +30,7 @@ Cashier::Cashier(const Cashier &c) {
 }
 
 /**
- * _clientCounter accessor.
+ * Accessor to the _clientCounter field.
  * @return the number of client served so far by this cashier.
  */
 int Cashier::clientCount() {
@@ -38,7 +38,7 @@ int Cashier::clientCount() {
 }
 
 /**
- * _free accessor
+ * Accessor to the _free field
  * @return true if the cashier is available to serve a client
  */
 bool Cashier::isFree() {
@@ -46,7 +46,7 @@ bool Cashier::isFree() {
 }
 
 /**
- * mean service duration accessor
+ * Accessor to the _serviceDuration field
  * @return mean service duration of this cashier
  */
 double Cashier::meanServiceTime() {
@@ -58,12 +58,12 @@ double Cashier::meanServiceTime() {
  * @return returns a double between 0 and 1 representing the percentage
  * of occupation of this cashier.
  */
-double Cashier::occupationRate() {
+double Cashier::occupationRate() { //TODO: might have to change this
     return (_clientCounter * _serviceDuration) / _bank->actualDuration();
 }
 
 /**
- *
+ * Makes the client leave the queue to be served by the cashier
  * @param client
  */
 void Cashier::serve(Client client) {
@@ -83,6 +83,10 @@ void Cashier::wait() {
     _free = true;
 }
 
+/**
+ * Accessor to the _bank field
+ * @return  a pointer to the bank
+ */
 Bank *Cashier::getBank() {
     return _bank;
 }

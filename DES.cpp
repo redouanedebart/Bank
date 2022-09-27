@@ -20,13 +20,12 @@ double DES::getTime() {
 }
 
 /**
- * starts the clock
+ * starts the clock and generate the schedule for the events
+ * using random generators. It is also destroying the events once they are finished
  */
 void DES::run() {
     _startTime = clock();
-    //TODO: simulate the time between clients arrival:
-    // use an exponential distribution to get a poisson process
-    //addEvent(e) according to timings obtained, while triggerTime <= expected duration
+    //TODO: Take care of events destruction
     while(!_evtQueue.empty()){
         _evtQueue.front()->handle();
         _evtQueue.pop();
@@ -78,12 +77,11 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
     double sumArrivalTimes=0;
     double newArrivalTime;
 
-
     while(sumArrivalTimes<=expectedDur)
     {
         newArrivalTime=  exp.operator() (rng);// generates the next random number in the distribution
         sumArrivalTimes  += newArrivalTime;
-
+        //TODO: create events and add them to the queue
     }
 }
 

@@ -1,8 +1,10 @@
 //
 // Created by redouane on 08/09/22.
 //
+//--------Header files included----//
 #include "WaitingQueue.h"
 
+//--------Class Implementation--------//
 /**
  * WaitingQueue constructor, will be called by Bank()
  * @param bankPtr Pointer on the bank so we can access important information
@@ -15,11 +17,17 @@ WaitingQueue::WaitingQueue(Bank* bankPtr) {
     _meanWaitingTime =0;
     _maxLength = 0;
     _meanLength = 0;
+    _empty = true;
 }
 
+/**
+ * method to know if the queue is empty or not
+ * @return a boolean, true if the queue is empty
+ */
 bool WaitingQueue::isEmpty() {
     return _empty;
 }
+
 /**
  * Accessor to the _maxLength field
  * @return the maximum length the getWaitingQueue has had
@@ -28,8 +36,6 @@ int WaitingQueue::maxLength() {
     return _maxLength;
 }
 
-//At which moment do we check the
-// size of the getWaitingQueue ? each event ? should we store the values ?
 /**
  * Accessor to the _meanLength field.
  * The field is updated at every event timing
@@ -47,6 +53,10 @@ double WaitingQueue::meanWaitingTime() {
     return _meanWaitingTime;
 }
 
+/**
+ * Adds a client to the waiting queue
+ * @param c reference to the client
+ */
 void WaitingQueue::addClient(Client& c) {
     _queue.push(c);
 }

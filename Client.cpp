@@ -6,12 +6,13 @@
 
 
 //--------Class Implementation--------//
-
+/**
+ * Constructor for the Client class
+ * @param arrivalTime
+ */
 Client::Client(double arrivalTime) {
     _time = arrivalTime;
 }
-
-Client::~Client() {}
 
 /**
  * Accessor for the _time field
@@ -20,3 +21,5 @@ Client::~Client() {}
 double Client::arrivalTime() {
     return _time;
 }
+
+Client::~Client() = default;
