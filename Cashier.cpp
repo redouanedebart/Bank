@@ -17,6 +17,7 @@ Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
     _serviceDuration = meanServiceDuration;
     _free = true;
     _clientCounter = 0;
+    _actualWorkTime = 0;
 }
 /**
  * Copy constructor
@@ -27,6 +28,7 @@ Cashier::Cashier(const Cashier &c) {
     _clientCounter = c._clientCounter;
     _free = c._free;
     _bank = c._bank;
+    _actualWorkTime = c._actualWorkTime;
 }
 
 /**
@@ -58,8 +60,8 @@ double Cashier::meanServiceTime() {
  * @return returns a double between 0 and 1 representing the percentage
  * of occupation of this cashier.
  */
-double Cashier::occupationRate() { //TODO: might have to change this
-    return (_clientCounter * _serviceDuration) / _bank->actualDuration();
+double Cashier::occupationRate() {
+    return _actualWorkTime / _bank->actualDuration();
 }
 
 /**
@@ -68,12 +70,15 @@ double Cashier::occupationRate() { //TODO: might have to change this
  */
 void Cashier::serve(Client client) {
     double time;
+    double workTime;
     _clientCounter ++;
     _free = false;
-    time = _bank->getTime();
-    time += _bank->generateEffectiveServiceTime(_serviceDuration);
-    Departure departure(&client, this, time); //TODO: finish this
+    time = _bank->getTime();//TODO: check this, there might be a problem: how does time evolves in the program ?
+    workTime = _bank->generateEffectiveServiceTime(_serviceDuration);
+    time += workTime;
+    Departure departure(&client, this, time);
     _bank->addEvent(departure);
+    _actualWorkTime += workTime;
 }
 
 /**

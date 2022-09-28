@@ -25,7 +25,6 @@ double DES::getTime() {
  */
 void DES::run() {
     _startTime = clock();
-    //TODO: Take care of events destruction
     while(!_evtQueue.empty()){
         _evtQueue.front()->handle();
         _evtQueue.pop();
@@ -82,6 +81,13 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
         sumArrivalTimes  += newArrivalTime;
         _arrivalTimings.push(sumArrivalTimes);
     }
+}
+
+std::queue<Event *> DES::getEvtQueue() {
+    return _evtQueue;
+}
+std::queue<double> DES::getArrivalTimings(){
+    return _arrivalTimings;
 }
 
 DES::~DES() = default;

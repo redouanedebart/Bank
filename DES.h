@@ -36,6 +36,8 @@ public:
     void addEvent(Event e);
     double generateEffectiveServiceTime(double value);
     void generateTimings(double meanTimeBetweenArrival, double expectedDur);
+    std::queue<Event*> getEvtQueue();
+    std::queue<double> getArrivalTimings();
     double getTime();//the time clock for the rest of the program
     void run();
 };

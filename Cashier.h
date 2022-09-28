@@ -20,6 +20,7 @@ protected:
     double _serviceDuration; // the mean service duration for this cashier
     int _clientCounter; //how many clients the cashier served
     bool _free; //true if the cashier is available to serve a client
+    double _actualWorkTime;
     Bank* _bank;
 
 public:

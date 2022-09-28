@@ -30,18 +30,26 @@ Arrival::~Arrival() {}
 /**
  * If any Cashier is available, the client goes to the first Cashier available,
  * else, the client is added to the getWaitingQueue
+ * this is also responsible for the creation of other arrivals
  */
 void Arrival::handle() {
+    double time;
 
     Client client(_time); //create the client
 
     //check if there is a free cashier to serve the client
-    if(!_simPtr->firstFreeCashier()) {
+    if(_simPtr->firstFreeCashier() == nullptr) {
         std::cout << "no free cashier for the moment, the client goes to the waiting queue" << std::endl;
         _simPtr->getWaitingQueue()->addClient(client) ;
     }else {
         _simPtr->firstFreeCashier()->serve(client);
     }
+
+    //should I check here the timings/expected duration instead of doing this in DES ?
+    time = _simPtr->getArrivalTimings().front();
+    Arrival arr(time, _simPtr);
+    _simPtr->addEvent(arr);
+    _simPtr->getArrivalTimings().pop();
 }
 
     

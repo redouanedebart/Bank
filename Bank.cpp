@@ -23,6 +23,7 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _queue = nullptr;
     this->generateTimings(meanTimeBtwArrivals, expDur);
     Arrival arrival(_arrivalTimings.front(), this);
+    _arrivalTimings.pop();
     addEvent(arrival);
 }
 
@@ -38,6 +39,10 @@ WaitingQueue *Bank::getWaitingQueue(){
     return _queue;
 }
 
+/**
+ * Copy constructor
+ * @param b
+ */
 Bank::Bank(const Bank &b): DES() {
     _clientCount = b._clientCount;
     _cashierCount = b._cashierCount;
@@ -105,7 +110,7 @@ Cashier *Bank::firstFreeCashier() {
         if((_cashierList.front()+i)->isFree())
             return (_cashierList.front()+i);
     }
-    return NULL;
+    return nullptr;
 }
 
 /**
