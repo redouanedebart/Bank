@@ -45,6 +45,8 @@ int main() {
     bank.clientsCount();
     bank.cashierOccupationRate();
     //TODO: output the mean waiting time for a client
+    //TODO: how is time measured ????
+    //if the time is the time of the current event
 
     return 0;
 }

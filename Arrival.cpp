@@ -42,10 +42,10 @@ void Arrival::handle() {
         std::cout << "no free cashier for the moment, the client goes to the waiting queue" << std::endl;
         _simPtr->getWaitingQueue()->addClient(client) ;
     }else {
-        _simPtr->firstFreeCashier()->serve(client);
+        _simPtr->firstFreeCashier()->serve(client); //departure is added to event queue
     }
-
-    //should I check here the timings/expected duration instead of doing this in DES ?
+    //if the client is not served it means that all cashiers are serving,
+    // which means that many departure are in evtqueue
     time = _simPtr->getArrivalTimings().front();
     Arrival arr(time, _simPtr);
     _simPtr->addEvent(arr);

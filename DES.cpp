@@ -14,9 +14,7 @@ using namespace std;
  * @return the current time in the simulation
  */
 double DES::getTime() {
-    _stopTime = clock();
-    _diffTime = _startTime - _stopTime;
-    return _diffTime;
+   return _currentEvent->getTime();
 }
 
 /**
@@ -24,12 +22,14 @@ double DES::getTime() {
  * using random generators. It is also destroying the events once they are finished
  */
 void DES::run() {
-    _startTime = clock();
+    //TODO: check if I dont pop evts in handle methods or elsewhere. Might
+    // have to rewrite this method
     while(!_evtQueue.empty()){
+        _currentEvent = _evtQueue.front();
         _evtQueue.front()->handle();
         _evtQueue.pop();
     }
-    _diffTime = getTime();
+    _simTime = getTime();
 }
 
 /**

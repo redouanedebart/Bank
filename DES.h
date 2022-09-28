@@ -22,11 +22,10 @@ class Event;
 
 class DES{
 protected:
-    double _startTime;
-    double _stopTime;
-    double _diffTime;
+    Event* _currentEvent;
+    double _simTime;
     //std::priority_queue<Event*, std::vector<Event*>, decltype(&Compare)> _evtQueue;
-    //uncomment event.h too
+    //uncomment event.h too if I want to try this again (priority_queue)
     std::queue<Event*> _evtQueue;
     std::queue<double> _arrivalTimings;
 
