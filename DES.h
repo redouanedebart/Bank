@@ -23,17 +23,18 @@ class Event;
 class DES{
 protected:
     Event* _currentEvent;
-    double _simTime;
     //std::priority_queue<Event*, std::vector<Event*>, decltype(&Compare)> _evtQueue;
     //uncomment event.h too if I want to try this again (priority_queue)
     std::queue<Event*> _evtQueue;
     std::queue<double> _arrivalTimings;
 
 public:
-    DES()= default;;
+    explicit DES(Event& evt);
+    DES(const DES &d);
+    DES() = default;
     ~DES() = default;
     void addEvent(Event& e);
-    double generateEffectiveServiceTime(double value);
+    static double generateEffectiveServiceTime(double value);
     void generateTimings(double meanTimeBetweenArrival, double expectedDur);
     std::queue<Event*> getEvtQueue();
     std::queue<double> getArrivalTimings();

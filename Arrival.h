@@ -16,10 +16,9 @@ class Arrival: public Event{
 protected:
     Bank* _simPtr;
 public:
-    Arrival(){};
     Arrival(double triggerTime, Bank* simPtr);
     Arrival(Arrival& arrival);
     ~Arrival();
-    void handle();//Creates a client
+    void handle() override;//Creates a client
 };
 #endif //BANK_ARRIVAL_H

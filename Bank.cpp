@@ -43,7 +43,7 @@ WaitingQueue *Bank::getWaitingQueue(){
  * Copy constructor
  * @param b
  */
-Bank::Bank(const Bank &b): DES() {
+Bank::Bank(const Bank &b): DES(b) {
     _clientCount = b._clientCount;
     _cashierCount = b._cashierCount;
     _expectedDuration = b._expectedDuration;
@@ -150,9 +150,9 @@ void Bank::addCashier(double msd) {
 /**
  * adds the waiting queue of clients to the bank
  */
-void Bank::addQueue() {
-    WaitingQueue queue(this);
-    _queue = &queue;
+void Bank::addQueue(WaitingQueue *q) {
+
+    _queue = q;
 }
 
 /**

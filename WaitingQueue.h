@@ -27,13 +27,13 @@ protected:
     double _meanLength;
 public:
     WaitingQueue(Bank* bankPtr);
-    WaitingQueue(){};
+    WaitingQueue() = default;
     ~WaitingQueue();
-    int maxLength();
-    double meanLength();
-    double meanWaitingTime();
+    int maxLength() const;
+    double meanLength() const;
+    double meanWaitingTime() const;
     void addClient(Client& c);
-    bool isEmpty();
+    bool isEmpty() const;
     Client* remove();
 };
 #endif //BANK_WAITINGQUEUE_H

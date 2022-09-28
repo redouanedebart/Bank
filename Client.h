@@ -15,9 +15,9 @@ class Client{
 protected:
     double _time;
 public:
-    Client(double arrivalTime);
+    explicit Client(double arrivalTime);
     ~Client();
-    double arrivalTime();
+    double arrivalTime() const;
 
 };
 #endif //BANK_CLIENT_H

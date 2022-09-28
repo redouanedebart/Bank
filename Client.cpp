@@ -18,7 +18,7 @@ Client::Client(double arrivalTime) {
  * Accessor for the _time field
  * @return _time which is the time of arrival of the Client
  */
-double Client::arrivalTime() {
+double Client::arrivalTime() const {
     return _time;
 }
 

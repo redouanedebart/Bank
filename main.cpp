@@ -1,6 +1,7 @@
 //--------Header files included----//
 #include <iostream>
 #include "Bank.h"
+#include "WaitingQueue.h"
 
 //----------------------------//
 //----------Main File --------//
@@ -32,8 +33,10 @@ int main() {
     }
 
     //adding the getWaitingQueue
-    bank.addQueue();
-    //running the simulation
+    WaitingQueue q(&bank);
+    cout<<"create queue ok"<<endl;
+    bank.addQueue(&q);
+    cout<<"running the simulation"<<endl;
     bank.run();
 
     //returning the results we want, ie actual duration, max and mean length of the getWaitingQueue, the client

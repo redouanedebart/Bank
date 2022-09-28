@@ -16,10 +16,19 @@ Event::Event(double triggerTime, DES *simPtr) {
 }
 
 /**
+ * Copy constructor
+ * @param e
+ */
+Event::Event(const Event &e) {
+    _time = e._time;
+    _simPtr = e._simPtr;
+}
+
+/**
  * Accessor to the _time field
  * @return the trigger time of the Event
  */
-double Event::getTime() {
+double Event::getTime() const {
     return _time;
 }
 

@@ -32,7 +32,7 @@ public:
     Bank(const Bank& b);
     double actualDuration();
     void addCashier(double msd);
-    void addQueue();
+    void addQueue(WaitingQueue *q);
     bool allCashiersFree();
     void averageWaitingTime();
     int cashierCount() const;

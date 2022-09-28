@@ -19,10 +19,11 @@ protected:
     double _time;
 public:
     Event(double triggerTime, DES *simPtr);
-    Event(){};
+    Event(const Event& e);
+    Event()= default;;
     ~Event();
     virtual void handle(); //method used to treat event, redefined in each subclass
-    double getTime(); //return the time at which the event occurs (triggerTime)
+    double getTime() const; //return the time at which the event occurs (triggerTime)
 };
 
 /*class Compare

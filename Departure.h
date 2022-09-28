@@ -20,9 +20,8 @@ protected:
     Cashier* _cashierPtr;
 public:
     Departure(Client* c, Cashier* cash, double time);
-    Departure(){};
     ~Departure();
-    void handle();
+    void handle() override;
 
 };
 #endif //BANK_DEPARTURE_H

@@ -4,9 +4,28 @@
 //--------Header files included----//
 #include "DES.h"
 #include "Event.h"
+#include<iostream>
 //--------Class Implementation--------//
 
 using namespace std;
+
+DES::DES(Event &evt) {
+    _currentEvent = &evt;
+    std::queue<Event*> queue;
+    _evtQueue = queue;
+    std::queue<double> arr;
+    _arrivalTimings = arr;
+}
+
+/**
+ * copy constructor
+ * @param d
+ */
+DES::DES(const DES &d) {
+    _evtQueue = d._evtQueue;
+    _currentEvent = d._currentEvent;
+    _arrivalTimings = d._arrivalTimings;
+}
 
 /**
  * Method that returns the time for other classes
@@ -22,14 +41,13 @@ double DES::getTime() {
  * using random generators. It is also destroying the events once they are finished
  */
 void DES::run() {
-    //TODO: check if I dont pop evts in handle methods or elsewhere. Might
-    // have to rewrite this method
     while(!_evtQueue.empty()){
         _currentEvent = _evtQueue.front();
-        _evtQueue.front()->handle();
+        cout<<"retrieved current evt"<<endl;
+        _evtQueue.front()->handle(); //TODO: segfault here
         _evtQueue.pop();
     }
-    _simTime = getTime();
+    getTime();
 }
 
 /**
@@ -38,6 +56,7 @@ void DES::run() {
  */
 void DES::addEvent(Event& e) {
     _evtQueue.push(&e);
+    cout<<"event pushed into queue"<<endl;
 }
 
 /**

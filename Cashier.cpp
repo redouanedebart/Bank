@@ -31,13 +31,14 @@ Cashier::Cashier(const Cashier &c) {
     _free = c._free;
     _bank = c._bank;
     _actualWorkTime = c._actualWorkTime;
+    _clientsWaitingTime = 0;
 }
 
 /**
  * Accessor to the _clientCounter field.
  * @return the number of client served so far by this cashier.
  */
-int Cashier::clientCount() {
+int Cashier::clientCount() const {
     return _clientCounter;
 }
 
@@ -45,7 +46,7 @@ int Cashier::clientCount() {
  * Accessor to the _free field
  * @return true if the cashier is available to serve a client
  */
-bool Cashier::isFree() {
+bool Cashier::isFree() const {
     return _free;
 }
 
@@ -53,7 +54,7 @@ bool Cashier::isFree() {
  * Accessor to the _serviceDuration field
  * @return mean service duration of this cashier
  */
-double Cashier::meanServiceTime() {
+double Cashier::meanServiceTime() const {
     return _serviceDuration;
 }
 
@@ -77,7 +78,7 @@ void Cashier::serve(Client client) {
     _free = false;
     time = _bank->getTime();//TODO: check this, there might be a problem: how does time evolves in the program ?
     _clientsWaitingTime += time - client.arrivalTime();
-    workTime = _bank->generateEffectiveServiceTime(_serviceDuration);
+    workTime = Bank::generateEffectiveServiceTime(_serviceDuration);
     time += workTime;
     Departure departure(&client, this, time);
     _bank->addEvent(departure);
@@ -100,6 +101,6 @@ Bank *Cashier::getBank() {
     return _bank;
 }
 
-double Cashier::getWaitingTime() {
+double Cashier::getWaitingTime() const {
     return _clientsWaitingTime;
 }

@@ -21,11 +21,12 @@ Arrival::Arrival(double triggerTime, Bank *simPtr): Event(){
  * Copy constructor
  * @param arrival reference to an arrival object
  */
-Arrival::Arrival(Arrival &arrival){
+Arrival::Arrival(Arrival &arrival) : Event(arrival) {
     _time = arrival._time;
+    _simPtr = arrival._simPtr;
 }
 
-Arrival::~Arrival() {}
+Arrival::~Arrival() = default;
 
 /**
  * If any Cashier is available, the client goes to the first Cashier available,
@@ -33,8 +34,9 @@ Arrival::~Arrival() {}
  * this is also responsible for the creation of other arrivals
  */
 void Arrival::handle() {
+    using namespace std;
     double time;
-
+    cout<<"handling client arrival"<<endl;
     Client client(_time); //create the client
 
     //check if there is a free cashier to serve the client
@@ -45,7 +47,7 @@ void Arrival::handle() {
         _simPtr->firstFreeCashier()->serve(client); //departure is added to event queue
     }
     //if the client is not served it means that all cashiers are serving,
-    // which means that many departure are in evtqueue
+    // which means that many departure are in event queue
     time = _simPtr->getArrivalTimings().front();
     Arrival arr(time, _simPtr);
     _simPtr->addEvent(arr);
