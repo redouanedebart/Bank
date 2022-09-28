@@ -34,6 +34,7 @@ public:
     void serve(Client client);
     void wait();
     Bank* getBank();
+    double getWaitingTime();
 };
 
 #endif //BANK_CASHIER_H

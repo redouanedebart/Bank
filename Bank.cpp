@@ -59,7 +59,7 @@ Bank::Bank(const Bank &b): DES() {
  *
  * @return the expected duration of the simulation
  */
-double Bank::expectedDuration() {
+double Bank::expectedDuration() const {
     return _expectedDuration;
 }
 
@@ -84,21 +84,33 @@ double Bank::actualDuration() {
  * accessor to _cashierCount field
  * @return the number of cashiers in the bank
  */
-int Bank::cashierCount() {
+int Bank::cashierCount() const {
     return _cashierCount;
 }
 
 /**
- * Prints the clients count per cashier and in total for the bank
+ * update the field _clientsCount by retrieving the value of the client
+ * counter of each cashier
+ * @return (int) total number of clients served by the bank
  */
-void Bank::clientsCount() {
-    int clientCount = 0;
+int Bank::totalClientsCount() {
+    _clientCount = 0; //resetting the value to avoid unwanted sum in cas of wrong callings
+    for (int i = 0; i < _cashierList.size(); ++i) {
+        _clientCount += (_cashierList.front()+i)->clientCount();
+    }
+    return _clientCount;
+}
+
+/**
+ * Prints the clients count per cashier and in total for the bank, and updates the field
+ * clients count in bank so it can be used in another printing method
+ */
+void Bank::printClientsCount() {
     cout<<"Client count: \n\tper cashier:\n\t";
     for (int i = 0; i < _cashierList.size(); ++i) {
-        clientCount += (_cashierList.front()+i)->clientCount();
         cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->clientCount()<<endl;
     }
-    cout<<"Client count: total: "<<clientCount;
+    cout<<"Client count: total: "<<this->totalClientsCount();
 
 }
 
@@ -120,7 +132,7 @@ Cashier *Bank::firstFreeCashier() {
  * NOTE: this is the mean time, not the actual time between two clients arrival.
  * the later is generated randomly using a poisson process
  */
-double Bank::timeBetweenArrival() {
+double Bank::timeBetweenArrival() const {
     return _meanTimeBetweenArrivals;
 }
 
@@ -165,4 +177,16 @@ bool Bank::allCashiersFree() {
             return false;
     }
     return true;
+}
+
+/**
+ * prints the average waiting time of a customer
+ */
+void Bank::averageWaitingTime() {
+    double waitingTime = 0;
+    for (int i = 0; i < _cashierList.size(); ++i) {
+        waitingTime += (_cashierList.front()+i)->getWaitingTime();
+    }
+    waitingTime = waitingTime / this->totalClientsCount();
+    cout<<"Average waiting time for a client: "<<waitingTime;
 }

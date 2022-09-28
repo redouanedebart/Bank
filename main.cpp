@@ -24,7 +24,7 @@ int main() {
     Bank bank(cashierCount, expectedSimDuration, meanTimeBtwArrivals);
 
     //adding the cashiers
-    for (int i = 0; i < cashierCount; ++i) {
+    for (int i = 0; i < bank.cashierCount(); ++i) {
         double serviceTime;
         cout<< "\nPlease enter the mean service duration for cashier number " <<i+1<<endl;
         cin>>serviceTime;
@@ -42,11 +42,9 @@ int main() {
     cout<<"Simulation finished\n Results:\n Actual duration:"<<bank.actualDuration();
     cout<<"Queue length: max length: "<< bank.getWaitingQueue()->maxLength();
     cout << "\tmean length: " << bank.getWaitingQueue()->meanLength() << endl;
-    bank.clientsCount();
+    bank.printClientsCount();
     bank.cashierOccupationRate();
     //TODO: output the mean waiting time for a client
-    //TODO: how is time measured ????
-    //if the time is the time of the current event
-
+    bank.averageWaitingTime();
     return 0;
 }

@@ -34,13 +34,15 @@ public:
     void addCashier(double msd);
     void addQueue();
     bool allCashiersFree();
-    int cashierCount();
+    void averageWaitingTime();
+    int cashierCount() const;
     void cashierOccupationRate();
-    void clientsCount();
-    double expectedDuration();
+    double expectedDuration() const;
     Cashier* firstFreeCashier();
     WaitingQueue* getWaitingQueue();
-    double timeBetweenArrival();
+    void printClientsCount();
+    double timeBetweenArrival() const;
+    int totalClientsCount();
 };
 
 #endif //BANK_BANK_H

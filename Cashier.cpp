@@ -99,3 +99,7 @@ void Cashier::wait() {
 Bank *Cashier::getBank() {
     return _bank;
 }
+
+double Cashier::getWaitingTime() {
+    return _clientsWaitingTime;
+}
