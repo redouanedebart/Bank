@@ -22,6 +22,7 @@ protected:
     bool _free; //true if the cashier is available to serve a client
     double _actualWorkTime;
     Bank* _bank;
+    double _clientsWaitingTime;
 
 public:
     Cashier(double meanServiceDuration, Bank *bankPtr);

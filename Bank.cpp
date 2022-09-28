@@ -77,6 +77,7 @@ double Bank::actualDuration() {
             }
         }
     }
+    return -1;
 }
 
 /**
@@ -91,7 +92,7 @@ int Bank::cashierCount() {
  * Prints the clients count per cashier and in total for the bank
  */
 void Bank::clientsCount() {
-    int clientCount;
+    int clientCount = 0;
     cout<<"Client count: \n\tper cashier:\n\t";
     for (int i = 0; i < _cashierList.size(); ++i) {
         clientCount += (_cashierList.front()+i)->clientCount();

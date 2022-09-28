@@ -30,17 +30,17 @@ protected:
 public:
     Bank(int _cashierCnt, double expDur, double meanTimeBtwArrivals);
     Bank(const Bank& b);
-    double expectedDuration();
-    int cashierCount();
-    double timeBetweenArrival();
     double actualDuration();
-    void clientsCount();
-    Cashier* firstFreeCashier();
     void addCashier(double msd);
     void addQueue();
-    WaitingQueue* getWaitingQueue();
-    void cashierOccupationRate();
     bool allCashiersFree();
+    int cashierCount();
+    void cashierOccupationRate();
+    void clientsCount();
+    double expectedDuration();
+    Cashier* firstFreeCashier();
+    WaitingQueue* getWaitingQueue();
+    double timeBetweenArrival();
 };
 
 #endif //BANK_BANK_H

@@ -18,7 +18,9 @@ Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
     _free = true;
     _clientCounter = 0;
     _actualWorkTime = 0;
+    _clientsWaitingTime = 0;
 }
+
 /**
  * Copy constructor
  * @param c
@@ -74,6 +76,7 @@ void Cashier::serve(Client client) {
     _clientCounter ++;
     _free = false;
     time = _bank->getTime();//TODO: check this, there might be a problem: how does time evolves in the program ?
+    _clientsWaitingTime += time - client.arrivalTime();
     workTime = _bank->generateEffectiveServiceTime(_serviceDuration);
     time += workTime;
     Departure departure(&client, this, time);

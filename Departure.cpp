@@ -23,6 +23,7 @@ Departure::Departure(Client* c, Cashier* cash, double time){
  * the waitingQueue is accessed via the pointer on bank in the cashier class
  */
 void Departure::handle() {
+    delete _clientPtr; //TODO: check if this is correct
     if (_cashierPtr->getBank()->getWaitingQueue()->isEmpty()) {
         _cashierPtr->wait();
     } else {

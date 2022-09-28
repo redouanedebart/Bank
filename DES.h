@@ -31,9 +31,9 @@ protected:
     std::queue<double> _arrivalTimings;
 
 public:
-    DES(){};
-    ~DES();
-    void addEvent(Event e);
+    DES()= default;;
+    ~DES() = default;
+    void addEvent(Event& e);
     double generateEffectiveServiceTime(double value);
     void generateTimings(double meanTimeBetweenArrival, double expectedDur);
     std::queue<Event*> getEvtQueue();

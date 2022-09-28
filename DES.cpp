@@ -36,7 +36,7 @@ void DES::run() {
  * Adds an Event to the event list ?
  * @param e is an Event (arrival or departure)
  */
-void DES::addEvent(Event e) {
+void DES::addEvent(Event& e) {
     _evtQueue.push(&e);
 }
 
@@ -89,5 +89,3 @@ std::queue<Event *> DES::getEvtQueue() {
 std::queue<double> DES::getArrivalTimings(){
     return _arrivalTimings;
 }
-
-DES::~DES() = default;
