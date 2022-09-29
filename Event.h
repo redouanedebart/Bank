@@ -11,14 +11,14 @@
 //--------Header files included----//
 
 //--------Class Prototypes--------//
-class DES;
+class Bank;
 
 class Event{
 protected:
-    DES* _simPtr;
+    Bank* _simuPtr;
     double _time;
 public:
-    Event(double triggerTime, DES *simPtr);
+    Event(double triggerTime, Bank *simPtr);
     Event(const Event& e);
     Event()= default;;
     ~Event();

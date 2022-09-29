@@ -26,7 +26,7 @@ protected:
     int _maxLength;
     double _meanLength;
 public:
-    WaitingQueue(Bank* bankPtr);
+    explicit WaitingQueue(Bank* bankPtr);
     WaitingQueue() = default;
     ~WaitingQueue();
     int maxLength() const;

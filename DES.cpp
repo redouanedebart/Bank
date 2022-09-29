@@ -33,7 +33,9 @@ DES::DES(const DES &d) {
  * @return the current time in the simulation
  */
 double DES::getTime() {
-   return _currentEvent->getTime();
+    double time;
+    time = _currentEvent->getTime();
+   return time;
 }
 
 /**

@@ -13,7 +13,8 @@
  * of the simulation
  * Creates a cashier with a given mean service time.
  */
-Cashier::Cashier(double meanServiceDuration, Bank *bankPtr): _bank(bankPtr) {
+Cashier::Cashier(double meanServiceDuration, Bank *bankPtr) {
+    _bank = new Bank(*bankPtr);
     _serviceDuration = meanServiceDuration;
     _free = true;
     _clientCounter = 0;
@@ -51,14 +52,6 @@ bool Cashier::isFree() const {
 }
 
 /**
- * Accessor to the _serviceDuration field
- * @return mean service duration of this cashier
- */
-double Cashier::meanServiceTime() const {
-    return _serviceDuration;
-}
-
-/**
  * Function that computes the occupation rate of this cashier
  * @return returns a double between 0 and 1 representing the percentage
  * of occupation of this cashier.
@@ -71,12 +64,12 @@ double Cashier::occupationRate() {
  * Makes the client leave the queue to be served by the cashier
  * @param client
  */
-void Cashier::serve(Client client) {
+void Cashier::serve(Client &client) {
     double time;
     double workTime;
     _clientCounter ++;
     _free = false;
-    time = _bank->getTime();//TODO: check this, there might be a problem: how does time evolves in the program ?
+    time = _bank->getTime();
     _clientsWaitingTime += time - client.arrivalTime();
     workTime = Bank::generateEffectiveServiceTime(_serviceDuration);
     time += workTime;

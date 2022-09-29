@@ -27,11 +27,11 @@ protected:
 public:
     Cashier(double meanServiceDuration, Bank *bankPtr);
     Cashier(const Cashier& c);
-    double meanServiceTime() const;
+
     int clientCount() const;
     double occupationRate();
     bool isFree() const;
-    void serve(Client client);
+    void serve(Client &client);
     void wait();
     Bank* getBank();
     double getWaitingTime() const;

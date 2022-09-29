@@ -3,16 +3,16 @@
 //
 //--------Header files included----//
 #include "Event.h"
-
+#include "Bank.h"
 //--------Class Implementation--------//
 
 /**
  * Constructor for Event class
  * @param triggerTime
  */
-Event::Event(double triggerTime, DES *simPtr) {
+Event::Event(double triggerTime, Bank *simPtr) {
     _time = triggerTime;
-    _simPtr = simPtr;
+    _simuPtr = new Bank(*simPtr);
 }
 
 /**
@@ -21,7 +21,7 @@ Event::Event(double triggerTime, DES *simPtr) {
  */
 Event::Event(const Event &e) {
     _time = e._time;
-    _simPtr = e._simPtr;
+    _simuPtr = e._simuPtr;
 }
 
 /**

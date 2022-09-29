@@ -47,7 +47,6 @@ int main() {
     cout << "\tmean length: " << bank.getWaitingQueue()->meanLength() << endl;
     bank.printClientsCount();
     bank.cashierOccupationRate();
-    //TODO: output the mean waiting time for a client
     bank.averageWaitingTime();
     return 0;
 }

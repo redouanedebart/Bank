@@ -22,9 +22,9 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _cashierList = cl;
     _queue = nullptr;
     this->generateTimings(meanTimeBtwArrivals, expDur);
-    Arrival arrival(_arrivalTimings.front(), this);
+    Arrival* arrival = new Arrival(_arrivalTimings.front(), this);
     _arrivalTimings.pop();
-    addEvent(arrival);
+    addEvent(*arrival);
 }
 
 /**
@@ -52,7 +52,7 @@ Bank::Bank(const Bank &b): DES(b) {
     _queue = b._queue;
     _evtQueue = b._evtQueue;
     _arrivalTimings = b._arrivalTimings;
-
+    _currentEvent = b._currentEvent;
 }
 
 /**
@@ -127,24 +127,14 @@ Cashier *Bank::firstFreeCashier() {
 }
 
 /**
- * accessor to the _meanTimeBetweenArrivals field
- * @return the time between two clients arrival (double)
- * NOTE: this is the mean time, not the actual time between two clients arrival.
- * the later is generated randomly using a poisson process
- */
-double Bank::timeBetweenArrival() const {
-    return _meanTimeBetweenArrivals;
-}
-
-/**
  * adds a cashier to the list of cashiers of the bank
  * @param msd mean service duration of this cashier.
  * NOTE: the actual service time vary for each clients served by this cashier
  * cf DES class to see more info about this
  */
 void Bank::addCashier(double msd) {
-    Cashier cashier(msd, this);
-    _cashierList.push_back(&cashier);
+    Cashier* c = new Cashier(msd, this);
+    _cashierList.push_back(c);
 }
 
 /**

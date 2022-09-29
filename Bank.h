@@ -41,7 +41,7 @@ public:
     Cashier* firstFreeCashier();
     WaitingQueue* getWaitingQueue();
     void printClientsCount();
-    double timeBetweenArrival() const;
+
     int totalClientsCount();
 };
 
