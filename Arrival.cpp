@@ -21,7 +21,7 @@ Arrival::Arrival(double triggerTime, Bank *simPtr){
  * Copy constructor
  * @param arrival reference to an arrival object
  */
-Arrival::Arrival(Arrival &arrival) : Event(arrival) {
+Arrival::Arrival(const Arrival &arrival) : Event(arrival) {
     _time = arrival._time;
     _simPtr = arrival._simPtr;
 }
@@ -49,10 +49,12 @@ void Arrival::handle() {
     }
     //if the client is not served it means that all cashiers are serving,
     // which means that many departure are in event queue
-    time = _simPtr->getArrivalTimings().front();
-    auto *arr = new Arrival(time, _simPtr);
-    _simPtr->addEvent(*arr);
-    _simPtr->getArrivalTimings().pop();
+    if (!_simPtr->getArrivalTimings().empty()){
+        time = _simPtr->getArrivalTimings().front();
+        auto *arr = new Arrival(time, this->_simPtr);
+        _simPtr->addEvent(*arr);
+        _simPtr->_arrivalTimings.pop();
+    }
 }
 
     

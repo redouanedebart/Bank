@@ -14,7 +14,7 @@
  * Creates a cashier with a given mean service time.
  */
 Cashier::Cashier(double meanServiceDuration, Bank *bankPtr) {
-    _bank = new Bank(*bankPtr);
+    _bank = bankPtr;
     _serviceDuration = meanServiceDuration;
     _free = true;
     _clientCounter = 0;
@@ -69,12 +69,12 @@ void Cashier::serve(Client &client) {
     double workTime;
     _clientCounter ++;
     _free = false;
-    time = _bank->getTime();
+    time = _bank->getTime(); //SEGFAULT HERE, _bank exists but is empty
     _clientsWaitingTime += time - client.arrivalTime();
     workTime = Bank::generateEffectiveServiceTime(_serviceDuration);
     time += workTime;
-    Departure departure(&client, this, time);
-    _bank->addEvent(departure);
+    auto* departure = new Departure(&client, this, time);
+    _bank->addEvent(*departure);
     _actualWorkTime += workTime;
 }
 

@@ -22,7 +22,7 @@ Bank::Bank(int cashierCnt, double expDur, double meanTimeBtwArrivals): DES(){
     _cashierList = cl;
     _queue = nullptr;
     this->generateTimings(meanTimeBtwArrivals, expDur);
-    Arrival* arrival = new Arrival(_arrivalTimings.front(), this);
+    auto* arrival = new Arrival(_arrivalTimings.front(), this);
     _arrivalTimings.pop();
     addEvent(*arrival);
 }
@@ -68,16 +68,13 @@ double Bank::expectedDuration() const {
  * @return the time when the simulation is finished, ie when all clients have been served
  */
 double Bank::actualDuration() {
-    if (getTime()>expectedDuration()){
-        if (_evtQueue.empty()){
-            if (allCashiersFree()) {
-                return getTime();
-            } else{
-                cout << "A cashier is still busy" << endl;
-            }
+    if (_evtQueue.empty()) {
+        if (allCashiersFree()) {
+            return getTime();
+        } else {
+            return _evtQueue.back()->getTime();
         }
     }
-    return -1;
 }
 
 /**
@@ -133,7 +130,8 @@ Cashier *Bank::firstFreeCashier() {
  * cf DES class to see more info about this
  */
 void Bank::addCashier(double msd) {
-    Cashier* c = new Cashier(msd, this);
+    Cashier* c;
+    c = new Cashier(msd, this);
     _cashierList.push_back(c);
 }
 

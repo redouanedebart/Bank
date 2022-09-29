@@ -9,8 +9,8 @@
 
 using namespace std;
 
-DES::DES(Event &evt) {
-    _currentEvent = &evt;
+DES::DES(Event *evt) {
+    _currentEvent = evt;
     std::queue<Event*> queue;
     _evtQueue = queue;
     std::queue<double> arr;
@@ -33,9 +33,7 @@ DES::DES(const DES &d) {
  * @return the current time in the simulation
  */
 double DES::getTime() {
-    double time;
-    time = _currentEvent->getTime();
-   return time;
+   return _currentEvent->getTime();
 }
 
 /**
@@ -43,10 +41,12 @@ double DES::getTime() {
  * using random generators. It is also destroying the events once they are finished
  */
 void DES::run() {
+    int i = 0;
     while(!_evtQueue.empty()){
+        cout<<"event number"<<++i<<endl;
         _currentEvent = _evtQueue.front();
-        cout<<"retrieved current evt"<<endl;
-        _evtQueue.front()->handle(); //TODO: segfault here
+        cout<<"retrieved current event"<<endl;
+        _evtQueue.front()->handle();
         _evtQueue.pop();
     }
     getTime();
@@ -95,12 +95,15 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
 
     double sumArrivalTimes=0;
     double newArrivalTime;
-
-    while(sumArrivalTimes <= expectedDur)
+    double safety =0;
+    while(safety < expectedDur)
     {
         newArrivalTime=  exp.operator() (rng);// generates the next random number in the distribution
         sumArrivalTimes  += newArrivalTime;
-        _arrivalTimings.push(sumArrivalTimes);
+        safety = sumArrivalTimes;
+        if(sumArrivalTimes<expectedDur){
+            _arrivalTimings.push(sumArrivalTimes);
+        }
     }
 }
 

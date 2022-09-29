@@ -63,6 +63,7 @@ void WaitingQueue::addClient(Client& c) {
 
 /**
  * pop the first client of the getWaitingQueue
+ * and returns it
  * @return the client going to be served
  */
 Client *WaitingQueue::remove() {

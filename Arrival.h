@@ -17,7 +17,7 @@ protected:
     Bank* _simPtr;
 public:
     Arrival(double triggerTime, Bank* simPtr);
-    Arrival(Arrival& arrival);
+    Arrival(const Arrival& arrival);
     ~Arrival();
     void handle() override;//Creates a client
 };

@@ -34,7 +34,7 @@ int main() {
 
     //adding the getWaitingQueue
     WaitingQueue q(&bank);
-    cout<<"create queue ok"<<endl;
+    cout<<"waiting queue created"<<endl;
     bank.addQueue(&q);
     cout<<"running the simulation"<<endl;
     bank.run();

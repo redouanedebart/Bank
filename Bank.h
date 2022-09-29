@@ -41,7 +41,6 @@ public:
     Cashier* firstFreeCashier();
     WaitingQueue* getWaitingQueue();
     void printClientsCount();
-
     int totalClientsCount();
 };
 

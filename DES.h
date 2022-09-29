@@ -26,10 +26,10 @@ protected:
     //std::priority_queue<Event*, std::vector<Event*>, decltype(&Compare)> _evtQueue;
     //uncomment event.h too if I want to try this again (priority_queue)
     std::queue<Event*> _evtQueue;
-    std::queue<double> _arrivalTimings;
 
 public:
-    explicit DES(Event& evt);
+    std::queue<double> _arrivalTimings;
+    explicit DES(Event *evt);
     DES(const DES &d);
     DES() = default;
     ~DES() = default;
