@@ -1,0 +1,138 @@
+\hypertarget{classCashier}{}\doxysection{Cashier Class Reference}
+\label{classCashier}\index{Cashier@{Cashier}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCashier_a2c41b8456872df05a1f5a71a316fb5e0}{Cashier}} (double mean\+Service\+Duration, \mbox{\hyperlink{classBank}{Bank}} $\ast$bank\+Ptr)
+\begin{DoxyCompactList}\small\item\em store the waiting time of clients served by this cashier \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCashier_aad1b459cefd79fa9d9c34dd4f373004f}{Cashier}} (const \mbox{\hyperlink{classCashier}{Cashier}} \&c)
+\item 
+int \mbox{\hyperlink{classCashier_acfbf72fe84f334c03b821756b85b59e7}{client\+Count}} () const
+\item 
+double \mbox{\hyperlink{classCashier_ac140f2084bb40559734397a0fdd9f766}{occupation\+Rate}} (double actual\+Dur) const
+\item 
+bool \mbox{\hyperlink{classCashier_a1dc554c4aa42a17edd13d9cd4cd78516}{is\+Free}} () const
+\item 
+void \mbox{\hyperlink{classCashier_a28b918d517315a0944b093c112cb4b32}{serve}} (\mbox{\hyperlink{classClient}{Client}} \&client)
+\item 
+void \mbox{\hyperlink{classCashier_ae493db178a5b61f2d955f11fe201ee4d}{wait}} ()
+\item 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ \mbox{\hyperlink{classCashier_aa2994b5de153743c22867dd7a6676bc6}{get\+Bank}} ()
+\item 
+\mbox{\Hypertarget{classCashier_a4db0525ff39eee47e282fd071edcdac3}\label{classCashier_a4db0525ff39eee47e282fd071edcdac3}} 
+double {\bfseries get\+Waiting\+Time} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCashier_abd137a2c5611e81d95d3722509daf9d8}\label{classCashier_abd137a2c5611e81d95d3722509daf9d8}} 
+double {\bfseries \+\_\+service\+Duration}
+\item 
+\mbox{\Hypertarget{classCashier_add0ab1d6f0a46c909697cb36f9601ef0}\label{classCashier_add0ab1d6f0a46c909697cb36f9601ef0}} 
+int {\bfseries \+\_\+client\+Counter}
+\begin{DoxyCompactList}\small\item\em the mean service duration for this cashier \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCashier_a90eeea46ea83f19b254af9ad3425fbbe}\label{classCashier_a90eeea46ea83f19b254af9ad3425fbbe}} 
+bool {\bfseries \+\_\+free}
+\begin{DoxyCompactList}\small\item\em how many clients the cashier served \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCashier_aae282a359b0dfe0435be881eef20450b}\label{classCashier_aae282a359b0dfe0435be881eef20450b}} 
+double {\bfseries \+\_\+actual\+Work\+Time}
+\begin{DoxyCompactList}\small\item\em true if the cashier is available to serve a client \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCashier_a18db7fd2123a5eb5cb443c3acf4152e2}\label{classCashier_a18db7fd2123a5eb5cb443c3acf4152e2}} 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ {\bfseries \+\_\+bank}
+\begin{DoxyCompactList}\small\item\em store the cumulated time of work of that cashier \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCashier_a23cc1bd2c17f640c7f2bdf5f72e05019}\label{classCashier_a23cc1bd2c17f640c7f2bdf5f72e05019}} 
+double {\bfseries \+\_\+clients\+Waiting\+Time}
+\begin{DoxyCompactList}\small\item\em pointer to the bank \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCashier_a2c41b8456872df05a1f5a71a316fb5e0}\label{classCashier_a2c41b8456872df05a1f5a71a316fb5e0}} 
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{Cashier()}{Cashier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cashier\+::\+Cashier (\begin{DoxyParamCaption}\item[{double}]{mean\+Service\+Duration,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{bank\+Ptr }\end{DoxyParamCaption})}
+
+
+
+store the waiting time of clients served by this cashier 
+
+\mbox{\hyperlink{classCashier}{Cashier}} constructor. Will be called by \mbox{\hyperlink{classBank}{Bank}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em mean\+Service\+Duration} & it is a param since it should be different for every cashier \\
+\hline
+{\em bank\+Ptr} & pointer on the bank, so we can access some infos such as actual duration of the simulation Creates a cashier with a given mean service time. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCashier_aad1b459cefd79fa9d9c34dd4f373004f}\label{classCashier_aad1b459cefd79fa9d9c34dd4f373004f}} 
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{Cashier()}{Cashier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cashier\+::\+Cashier (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCashier}{Cashier}} \&}]{c }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCashier_acfbf72fe84f334c03b821756b85b59e7}\label{classCashier_acfbf72fe84f334c03b821756b85b59e7}} 
+\index{Cashier@{Cashier}!clientCount@{clientCount}}
+\index{clientCount@{clientCount}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{clientCount()}{clientCount()}}
+{\footnotesize\ttfamily int Cashier\+::client\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor to the \+\_\+client\+Counter field. \begin{DoxyReturn}{Returns}
+the number of client served so far by this cashier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_aa2994b5de153743c22867dd7a6676bc6}\label{classCashier_aa2994b5de153743c22867dd7a6676bc6}} 
+\index{Cashier@{Cashier}!getBank@{getBank}}
+\index{getBank@{getBank}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{getBank()}{getBank()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBank}{Bank}} $\ast$ Cashier\+::get\+Bank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Accessor to the \+\_\+bank field \begin{DoxyReturn}{Returns}
+a pointer to the bank 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_a1dc554c4aa42a17edd13d9cd4cd78516}\label{classCashier_a1dc554c4aa42a17edd13d9cd4cd78516}} 
+\index{Cashier@{Cashier}!isFree@{isFree}}
+\index{isFree@{isFree}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{isFree()}{isFree()}}
+{\footnotesize\ttfamily bool Cashier\+::is\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor to the \+\_\+free field \begin{DoxyReturn}{Returns}
+true if the cashier is available to serve a client 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_ac140f2084bb40559734397a0fdd9f766}\label{classCashier_ac140f2084bb40559734397a0fdd9f766}} 
+\index{Cashier@{Cashier}!occupationRate@{occupationRate}}
+\index{occupationRate@{occupationRate}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{occupationRate()}{occupationRate()}}
+{\footnotesize\ttfamily double Cashier\+::occupation\+Rate (\begin{DoxyParamCaption}\item[{double}]{actual\+Dur }\end{DoxyParamCaption}) const}
+
+Function that computes the occupation rate of this cashier \begin{DoxyReturn}{Returns}
+returns a double between 0 and 1 representing the percentage of occupation of this cashier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_a28b918d517315a0944b093c112cb4b32}\label{classCashier_a28b918d517315a0944b093c112cb4b32}} 
+\index{Cashier@{Cashier}!serve@{serve}}
+\index{serve@{serve}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{serve()}{serve()}}
+{\footnotesize\ttfamily void Cashier\+::serve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})}
+
+Makes the client leave the queue to be served by the cashier 
+\begin{DoxyParams}{Parameters}
+{\em client} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCashier_ae493db178a5b61f2d955f11fe201ee4d}\label{classCashier_ae493db178a5b61f2d955f11fe201ee4d}} 
+\index{Cashier@{Cashier}!wait@{wait}}
+\index{wait@{wait}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void Cashier\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+if there is no one to serve, the cashier waits until there is a client to serve 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Cashier.\+h\item 
+src/Cashier.\+cpp\end{DoxyCompactItemize}

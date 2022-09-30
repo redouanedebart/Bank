@@ -1,0 +1,88 @@
+\hypertarget{classEvent}{}\doxysection{Event Class Reference}
+\label{classEvent}\index{Event@{Event}}
+Inheritance diagram for Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEvent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEvent_a855e001fbecca61b1c8cebf3afe19335}{Event}} (double trigger\+Time, \mbox{\hyperlink{classBank}{Bank}} $\ast$sim\+Ptr)
+\begin{DoxyCompactList}\small\item\em trigger time of the event \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEvent_a5ed3b5e31579b9dfc4a667f208a0932a}{Event}} (const \mbox{\hyperlink{classEvent}{Event}} \&e)
+\item 
+virtual void \mbox{\hyperlink{classEvent_a143ba5b1ffa009cabdbb262feb8d0e98}{handle}} ()
+\item 
+double \mbox{\hyperlink{classEvent_a9380b06e27cd13950c89be00d0cde8d2}{get\+Time}} () const
+\item 
+\mbox{\Hypertarget{classEvent_af03aa7de91acb569237591bb87c26ff5}\label{classEvent_af03aa7de91acb569237591bb87c26ff5}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classEvent}{Event}} $\ast$\&rhs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEvent_aa457d9da38337334325e3a7bf6b5f7ec}\label{classEvent_aa457d9da38337334325e3a7bf6b5f7ec}} 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ {\bfseries \+\_\+simu\+Ptr}
+\item 
+\mbox{\Hypertarget{classEvent_a44bd028250341ee28517602e67d3d21e}\label{classEvent_a44bd028250341ee28517602e67d3d21e}} 
+double {\bfseries \+\_\+time}
+\begin{DoxyCompactList}\small\item\em pointer to the bank \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEvent_a855e001fbecca61b1c8cebf3afe19335}\label{classEvent_a855e001fbecca61b1c8cebf3afe19335}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}\item[{double}]{trigger\+Time,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{sim\+Ptr }\end{DoxyParamCaption})}
+
+
+
+trigger time of the event 
+
+Constructor for \mbox{\hyperlink{classEvent}{Event}} class 
+\begin{DoxyParams}{Parameters}
+{\em trigger\+Time} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEvent_a5ed3b5e31579b9dfc4a667f208a0932a}\label{classEvent_a5ed3b5e31579b9dfc4a667f208a0932a}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvent}{Event}} \&}]{e }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEvent_a9380b06e27cd13950c89be00d0cde8d2}\label{classEvent_a9380b06e27cd13950c89be00d0cde8d2}} 
+\index{Event@{Event}!getTime@{getTime}}
+\index{getTime@{getTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double Event\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor to the \+\_\+time field \begin{DoxyReturn}{Returns}
+the trigger time of the \mbox{\hyperlink{classEvent}{Event}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEvent_a143ba5b1ffa009cabdbb262feb8d0e98}\label{classEvent_a143ba5b1ffa009cabdbb262feb8d0e98}} 
+\index{Event@{Event}!handle@{handle}}
+\index{handle@{handle}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Event\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+virtual method redefined in each subclasses 
+
+Reimplemented in \mbox{\hyperlink{classArrival_aa1978ad9118f2f99f0a372fd6e921f0f}{Arrival}}, and \mbox{\hyperlink{classDeparture_adb8fd357e30f6fe35971cc53506df5e3}{Departure}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Event.\+h\item 
+src/Event.\+cpp\end{DoxyCompactItemize}

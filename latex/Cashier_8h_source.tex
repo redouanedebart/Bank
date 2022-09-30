@@ -1,0 +1,45 @@
+\hypertarget{Cashier_8h_source}{}\doxysection{Cashier.\+h}
+\label{Cashier_8h_source}\index{include/Cashier.h@{include/Cashier.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by redouane on 08/09/22.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Header file for the cashier class and associated exceptions}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/Header Guard-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef BANK\_CASHIER\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define BANK\_CASHIER\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/Header files included-\/-\/-\/-\///}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}Client.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Bank.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/Class Prototypes-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classBank}{Bank}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classCashier}{Cashier}}\{}
+\DoxyCodeLine{19 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{20     \textcolor{keywordtype}{double} \_serviceDuration; }
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCashier_add0ab1d6f0a46c909697cb36f9601ef0}{\_clientCounter}}; }
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classCashier_a90eeea46ea83f19b254af9ad3425fbbe}{\_free}}; }
+\DoxyCodeLine{23     \textcolor{keywordtype}{double} \mbox{\hyperlink{classCashier_aae282a359b0dfe0435be881eef20450b}{\_actualWorkTime}}; }
+\DoxyCodeLine{24     \mbox{\hyperlink{classBank}{Bank}}* \mbox{\hyperlink{classCashier_a18db7fd2123a5eb5cb443c3acf4152e2}{\_bank}}; }
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} \mbox{\hyperlink{classCashier_a23cc1bd2c17f640c7f2bdf5f72e05019}{\_clientsWaitingTime}}; }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{classCashier}{Cashier}}(\textcolor{keywordtype}{double} meanServiceDuration, \mbox{\hyperlink{classBank}{Bank}} *bankPtr);}
+\DoxyCodeLine{29     \mbox{\hyperlink{classCashier}{Cashier}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCashier}{Cashier}}\& c);}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCashier_acfbf72fe84f334c03b821756b85b59e7}{clientCount}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{double} \mbox{\hyperlink{classCashier_ac140f2084bb40559734397a0fdd9f766}{occupationRate}}(\textcolor{keywordtype}{double} actualDur) \textcolor{keyword}{const};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classCashier_a1dc554c4aa42a17edd13d9cd4cd78516}{isFree}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCashier_a28b918d517315a0944b093c112cb4b32}{serve}}(\mbox{\hyperlink{classClient}{Client}} \&client);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCashier_ae493db178a5b61f2d955f11fe201ee4d}{wait}}();}
+\DoxyCodeLine{35     \mbox{\hyperlink{classBank}{Bank}}* \mbox{\hyperlink{classCashier_aa2994b5de153743c22867dd7a6676bc6}{getBank}}();}
+\DoxyCodeLine{36     \textcolor{keywordtype}{double} getWaitingTime() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//BANK\_CASHIER\_H}}
+
+\end{DoxyCode}

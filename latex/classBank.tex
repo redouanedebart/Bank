@@ -1,0 +1,226 @@
+\hypertarget{classBank}{}\doxysection{Bank Class Reference}
+\label{classBank}\index{Bank@{Bank}}
+Inheritance diagram for Bank\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBank}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBank_ac5ccd08ebff0ae44b5fdafe638e0f2d2}{Bank}} (int \+\_\+cashier\+Cnt, double exp\+Dur, double mean\+Time\+Btw\+Arrivals)
+\begin{DoxyCompactList}\small\item\em average time between clients arrivals \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBank_a2db3aaf30356d41d3ce4157b3d7e675b}{Bank}} (const \mbox{\hyperlink{classBank}{Bank}} \&b)
+\item 
+double \mbox{\hyperlink{classBank_a39fbd5f5eab6b0fb3c1231508e44cfc3}{actual\+Duration}} ()
+\item 
+void \mbox{\hyperlink{classBank_a896b2e5d5e2823d16a31cd3d11f7105f}{add\+Cashier}} (double msd)
+\begin{DoxyCompactList}\small\item\em returns the actual duration of the simulation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBank_aeaecee714b54e9589c8eabe477af5003}{add\+Queue}} (\mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em adds a cashier to the list \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBank_a21a48dc5c13672a24849ec291d9c38e7}{all\+Cashiers\+Free}} ()
+\begin{DoxyCompactList}\small\item\em add the waiting queue to the bank \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBank_abf679463ba1e5af4ce6d944d0672afb7}{average\+Waiting\+Time}} ()
+\begin{DoxyCompactList}\small\item\em true if all the cashiers are available \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBank_abe44517d33dc8135cc6977f00dddcca1}{cashier\+Count}} () const
+\begin{DoxyCompactList}\small\item\em for the client \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBank_aefc9acc9f4a1c1840382c5879538027a}{cashier\+Occupation\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em number of cashiers \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classBank_a8879ca1446d7a2ac6a5383aef74dc085}{expected\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em how busy a cashier is \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCashier}{Cashier}} $\ast$ \mbox{\hyperlink{classBank_aafec18760b3c0dcaa67f6d501ceb1b5f}{first\+Free\+Cashier}} ()
+\item 
+\mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} $\ast$ \mbox{\hyperlink{classBank_a384fb8532781307146970a21c55876f9}{get\+Waiting\+Queue}} ()
+\item 
+void \mbox{\hyperlink{classBank_a80d90d1e5b57ed082bc76d0761ddd206}{print\+Cashier\+Info}} ()
+\item 
+int \mbox{\hyperlink{classBank_a16ced523f3c7be1a574e83799bd72f2a}{total\+Clients\+Count}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBank_aba6a0ba307d58b2613c67091acec2736}\label{classBank_aba6a0ba307d58b2613c67091acec2736}} 
+\mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} $\ast$ {\bfseries \+\_\+queue}
+\item 
+\mbox{\Hypertarget{classBank_abde576f51365dd9b30492be7d532d1d2}\label{classBank_abde576f51365dd9b30492be7d532d1d2}} 
+int {\bfseries \+\_\+cashier\+Count}
+\begin{DoxyCompactList}\small\item\em pointer to the waiting queue \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBank_a03f2186ded111acadb5725c43172562f}\label{classBank_a03f2186ded111acadb5725c43172562f}} 
+int {\bfseries \+\_\+client\+Count}
+\begin{DoxyCompactList}\small\item\em number of cashiers in the bank \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBank_a818ca851dddd1a4f10e86beade8d8d26}\label{classBank_a818ca851dddd1a4f10e86beade8d8d26}} 
+std\+::list$<$ \mbox{\hyperlink{classCashier}{Cashier}} $\ast$ $>$ {\bfseries \+\_\+cashier\+List}
+\begin{DoxyCompactList}\small\item\em field to store the total number of cashier at the end of the simulation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBank_aaf3776a36b65f3c3093fbae78347493d}\label{classBank_aaf3776a36b65f3c3093fbae78347493d}} 
+double {\bfseries \+\_\+expected\+Duration}
+\begin{DoxyCompactList}\small\item\em list of cashiers at the bank \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBank_af5214040183ae133de520377c4273111}\label{classBank_af5214040183ae133de520377c4273111}} 
+double {\bfseries \+\_\+mean\+Time\+Between\+Arrivals}
+\begin{DoxyCompactList}\small\item\em the expected duration of the simulation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBank_ac5ccd08ebff0ae44b5fdafe638e0f2d2}\label{classBank_ac5ccd08ebff0ae44b5fdafe638e0f2d2}} 
+\index{Bank@{Bank}!Bank@{Bank}}
+\index{Bank@{Bank}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{Bank()}{Bank()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bank\+::\+Bank (\begin{DoxyParamCaption}\item[{int}]{cashier\+Cnt,  }\item[{double}]{exp\+Dur,  }\item[{double}]{mean\+Time\+Btw\+Arrivals }\end{DoxyParamCaption})}
+
+
+
+average time between clients arrivals 
+
+constructor for \mbox{\hyperlink{classBank}{Bank}} class, takes 3 param\+: 
+\begin{DoxyParams}{Parameters}
+{\em cashier\+Cnt} & the number of cashiers in the bank, \\
+\hline
+{\em exp\+Dur} & the expected duration of the simulation \\
+\hline
+{\em mean\+Time\+Btw\+Arrivals} & time between two clients arrival \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBank_a2db3aaf30356d41d3ce4157b3d7e675b}\label{classBank_a2db3aaf30356d41d3ce4157b3d7e675b}} 
+\index{Bank@{Bank}!Bank@{Bank}}
+\index{Bank@{Bank}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{Bank()}{Bank()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bank\+::\+Bank (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBank}{Bank}} \&}]{b }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBank_a39fbd5f5eab6b0fb3c1231508e44cfc3}\label{classBank_a39fbd5f5eab6b0fb3c1231508e44cfc3}} 
+\index{Bank@{Bank}!actualDuration@{actualDuration}}
+\index{actualDuration@{actualDuration}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{actualDuration()}{actualDuration()}}
+{\footnotesize\ttfamily double Bank\+::actual\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the time when the simulation is finished, ie when all clients have been served 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a896b2e5d5e2823d16a31cd3d11f7105f}\label{classBank_a896b2e5d5e2823d16a31cd3d11f7105f}} 
+\index{Bank@{Bank}!addCashier@{addCashier}}
+\index{addCashier@{addCashier}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{addCashier()}{addCashier()}}
+{\footnotesize\ttfamily void Bank\+::add\+Cashier (\begin{DoxyParamCaption}\item[{double}]{msd }\end{DoxyParamCaption})}
+
+
+
+returns the actual duration of the simulation 
+
+adds a cashier to the list of cashiers of the bank 
+\begin{DoxyParams}{Parameters}
+{\em msd} & mean service duration of this cashier. NOTE\+: the actual service time vary for each clients served by this cashier cf \mbox{\hyperlink{classDES}{DES}} class to see more info about this \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBank_aeaecee714b54e9589c8eabe477af5003}\label{classBank_aeaecee714b54e9589c8eabe477af5003}} 
+\index{Bank@{Bank}!addQueue@{addQueue}}
+\index{addQueue@{addQueue}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{addQueue()}{addQueue()}}
+{\footnotesize\ttfamily void Bank\+::add\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+adds a cashier to the list 
+
+adds the waiting queue of clients to the bank \mbox{\Hypertarget{classBank_a21a48dc5c13672a24849ec291d9c38e7}\label{classBank_a21a48dc5c13672a24849ec291d9c38e7}} 
+\index{Bank@{Bank}!allCashiersFree@{allCashiersFree}}
+\index{allCashiersFree@{allCashiersFree}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{allCashiersFree()}{allCashiersFree()}}
+{\footnotesize\ttfamily bool Bank\+::all\+Cashiers\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+add the waiting queue to the bank 
+
+\begin{DoxyReturn}{Returns}
+true if all cashiers are free 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_abf679463ba1e5af4ce6d944d0672afb7}\label{classBank_abf679463ba1e5af4ce6d944d0672afb7}} 
+\index{Bank@{Bank}!averageWaitingTime@{averageWaitingTime}}
+\index{averageWaitingTime@{averageWaitingTime}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{averageWaitingTime()}{averageWaitingTime()}}
+{\footnotesize\ttfamily void Bank\+::average\+Waiting\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+true if all the cashiers are available 
+
+prints the average waiting time of a customer \mbox{\Hypertarget{classBank_abe44517d33dc8135cc6977f00dddcca1}\label{classBank_abe44517d33dc8135cc6977f00dddcca1}} 
+\index{Bank@{Bank}!cashierCount@{cashierCount}}
+\index{cashierCount@{cashierCount}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{cashierCount()}{cashierCount()}}
+{\footnotesize\ttfamily int Bank\+::cashier\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+for the client 
+
+accessor to \+\_\+cashier\+Count field \begin{DoxyReturn}{Returns}
+the number of cashiers in the bank 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_aefc9acc9f4a1c1840382c5879538027a}\label{classBank_aefc9acc9f4a1c1840382c5879538027a}} 
+\index{Bank@{Bank}!cashierOccupationRate@{cashierOccupationRate}}
+\index{cashierOccupationRate@{cashierOccupationRate}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{cashierOccupationRate()}{cashierOccupationRate()}}
+{\footnotesize\ttfamily void Bank\+::cashier\+Occupation\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of cashiers 
+
+Prints the working ratios of each cashiers \mbox{\Hypertarget{classBank_a8879ca1446d7a2ac6a5383aef74dc085}\label{classBank_a8879ca1446d7a2ac6a5383aef74dc085}} 
+\index{Bank@{Bank}!expectedDuration@{expectedDuration}}
+\index{expectedDuration@{expectedDuration}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{expectedDuration()}{expectedDuration()}}
+{\footnotesize\ttfamily double Bank\+::expected\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+how busy a cashier is 
+
+\begin{DoxyReturn}{Returns}
+the expected duration of the simulation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_aafec18760b3c0dcaa67f6d501ceb1b5f}\label{classBank_aafec18760b3c0dcaa67f6d501ceb1b5f}} 
+\index{Bank@{Bank}!firstFreeCashier@{firstFreeCashier}}
+\index{firstFreeCashier@{firstFreeCashier}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{firstFreeCashier()}{firstFreeCashier()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCashier}{Cashier}} $\ast$ Bank\+::first\+Free\+Cashier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the first free cashier to serve a client \begin{DoxyReturn}{Returns}
+a pointer to the first cashier available 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a384fb8532781307146970a21c55876f9}\label{classBank_a384fb8532781307146970a21c55876f9}} 
+\index{Bank@{Bank}!getWaitingQueue@{getWaitingQueue}}
+\index{getWaitingQueue@{getWaitingQueue}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{getWaitingQueue()}{getWaitingQueue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} $\ast$ Bank\+::get\+Waiting\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+FONCTION AJOUTEE PAR MATTHIEU (24/09/2022) Cette renvoi la file d\textquotesingle{}attente \char`\"{}get\+Waiting\+Queue\char`\"{} présente dans la bank modif par Rédouane\+: n\textquotesingle{}oublie pas d\textquotesingle{}ajouter le prototype dans le header la prochaine fois Changed type to \mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} Ptr, added the prototype in header file Forward declaration of class \mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} only allows us to get a ptr to the get\+Waiting\+Queue (That\textquotesingle{}s what we wanted from the beginning, so, no worries) \mbox{\Hypertarget{classBank_a80d90d1e5b57ed082bc76d0761ddd206}\label{classBank_a80d90d1e5b57ed082bc76d0761ddd206}} 
+\index{Bank@{Bank}!printCashierInfo@{printCashierInfo}}
+\index{printCashierInfo@{printCashierInfo}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{printCashierInfo()}{printCashierInfo()}}
+{\footnotesize\ttfamily void Bank\+::print\+Cashier\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints the clients count per cashier and in total for the bank, and updates the field clients count in bank so it can be used in another printing method \mbox{\Hypertarget{classBank_a16ced523f3c7be1a574e83799bd72f2a}\label{classBank_a16ced523f3c7be1a574e83799bd72f2a}} 
+\index{Bank@{Bank}!totalClientsCount@{totalClientsCount}}
+\index{totalClientsCount@{totalClientsCount}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{totalClientsCount()}{totalClientsCount()}}
+{\footnotesize\ttfamily int Bank\+::total\+Clients\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+update the field \+\_\+clients\+Count by retrieving the value of the client counter of each cashier \begin{DoxyReturn}{Returns}
+(int) total number of clients served by the bank 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Bank.\+h\item 
+src/Bank.\+cpp\end{DoxyCompactItemize}
