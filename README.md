@@ -9,7 +9,8 @@ M2 IISC - CY Cergy Paris Université
 This program aims at simulating a bank. More specifically, it is intended to give the user insights on the effectiveness
 of the cashiers, the waiting time of clients, and so on. For more precise information, you can get the subject here :
 [link to the subject.](https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf "sujet banque")
-The program is written in C++, and a Makefile is provided.
+The program is written in C++, and a Makefile is provided.\
+This project can be see on [github](https://github.com/redouanedebart/Bank/).
 ## How to use it
 Open the archive, and use the command `make` in the main directory. You can then use the command `./bank` to run the
 program. At launch, the program will ask you the entry parameters for your simulation:
@@ -34,3 +35,7 @@ The issues I've met are segfaults, and also not changing a data structure soon e
 the whole thing. Given that some results are dependent, the output at the end of the simulation is often far from what
 is expected.
 Some testing has been made with the parameters 10, 2, 2, 2, 2.
+
+One of the most obvious issue I had was the inadequate data structure used to store events.
+I used a queue but the way I pushed events into it made it necessary to be able to sort it.
+I wanted to try to use a priority queue to solve this problem, but I didn't have enough time left.

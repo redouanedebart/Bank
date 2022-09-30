@@ -84,7 +84,7 @@ Table of content</h1>
 </ol>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Overview</h1>
-<p >This program aims at simulating a bank. More specifically, it is intended to give the user insights on the effectiveness of the cashiers, the waiting time of clients, and so on. For more precise information, you can get the subject here : <a href="https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf" title="sujet banque">link to the subject.</a> The program is written in C++, and a Makefile is provided. </p>
+<p >This program aims at simulating a bank. More specifically, it is intended to give the user insights on the effectiveness of the cashiers, the waiting time of clients, and so on. For more precise information, you can get the subject here : <a href="https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf" title="sujet banque">link to the subject.</a> The program is written in C++, and a Makefile is provided.\ This project can be see on <a href="https://github.com/redouanedebart/Bank/">github</a>. </p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 How to use it</h1>
 <p >Open the archive, and use the command <code>make</code> in the main directory. You can then use the command <code>./bank</code> to run the program. At launch, the program will ask you the entry parameters for your simulation:</p><ol type="1">
@@ -96,10 +96,11 @@ How to use it</h1>
 <p ><em>Note: the program doesn't yet manage careless inputs, so be careful.</em></p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Documentation</h1>
-<p >The source code is commented and a configuration file for doxygen is provided in the archive. To generate the doxygen documentation, just type <code>./doxygen configuration</code></p>
+<p >The source code is commented and doxygen documentation is available. If you have to generate it again, a configuration file for doxygen is provided in the archive. To generate the doxygen documentation, go to the directory where you have installed doxygen, where you can execute it by typing <code>./doxygen</code> . Then write <code>export PATH=$PATH:.</code>. This will add the path of doxygen to the environment variable path for this session. You can now go back to the source directory and just type <code>./doxygen configuration</code> in the terminal.</p>
 <h1><a class="anchor" id="autotoc_md5"></a>
 V1 flaws and bugs</h1>
-<p >The program isn't working as well as I wanted, and does not return the results in a good way. The issues I've met are segfaults, and also not changing a data structure soon enough, so it doesn't break the whole thing. Given that some results are dependent, the output at the end of the simulation is often far from what is expected. </p>
+<p >The program isn't working as well as I wanted, and does not return the results in a good way. The issues I've met are segfaults, and also not changing a data structure soon enough, so it doesn't break the whole thing. Given that some results are dependent, the output at the end of the simulation is often far from what is expected. Some testing has been made with the parameters 10, 2, 2, 2, 2.</p>
+<p >One of the most obvious issue I had was the inadequate data structure used to store events. I used a queue but the way I pushed events into it made it necessary to be able to sort it. I wanted to try to use a priority queue to solve this problem, but I didn't have enough time left. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
