@@ -2,8 +2,8 @@
 // Created by redouane on 09/09/22.
 //
 //--------Header files included----//
-#include "Event.h"
-#include "Bank.h"
+#include "../include/Event.h"
+#include "../include/Bank.h"
 //--------Class Implementation--------//
 
 /**

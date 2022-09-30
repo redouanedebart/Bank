@@ -2,7 +2,7 @@
 // Created by redouane on 08/09/22.
 //
 //--------Header files included----//
-#include "WaitingQueue.h"
+#include "../include/WaitingQueue.h"
 
 //--------Class Implementation--------//
 /**

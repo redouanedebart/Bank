@@ -2,8 +2,8 @@
 // Created by redouane on 08/09/22.
 //
 //--------Header files included----//
-#include "Cashier.h"
-#include "Departure.h"
+#include "../include/Cashier.h"
+#include "../include/Departure.h"
 //--------Class Implementation--------//
 
 /**

@@ -1,18 +1,18 @@
 #makefile
 CC = g++
-CFLAGS =
-BANK = DES.o Bank.o Event.o Arrival.o Cashier.o Client.o Departure.o  WaitingQueue.o main.o
+CFLAGS = -I ./include
+BANK = src/DES.o src/Bank.o src/Event.o src/Arrival.o src/Cashier.o src/Client.o src/Departure.o  src/WaitingQueue.o src/main.o
 all: $(BANK)
 	$(CC) -o bank $(BANK) $(CFLAGS)
 clean:
-	rm -f bank *.o
+	rm -f bank src/*.o
 
-DES.o: DES.h Event.h
-Event.o: Event.h
-Arrival.o: Arrival.h Event.h
-Cashier.o: Cashier.h Client.h Bank.h
-Client.o: Client.h
-Departure.o: Departure.h Event.h
-WaitingQueue.o: WaitingQueue.h Bank.h Client.h
-Bank.o:Bank.h DES.h WaitingQueue.h Cashier.h
-main.o: Bank.h
+DES.o: include/DES.h include/Event.h
+Event.o: include/Event.h
+Arrival.o: include/Arrival.h include/Event.h
+Cashier.o: include/Cashier.h include/Client.h include/Bank.h
+Client.o: include/Client.h
+Departure.o: include/Departure.h include/Event.h
+WaitingQueue.o: include/WaitingQueue.h include/Bank.h include/Client.h
+Bank.o:include/Bank.h include/DES.h include/WaitingQueue.h include/Cashier.h
+main.o: include/Bank.h

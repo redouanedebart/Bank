@@ -33,3 +33,4 @@ The program isn't working as well as I wanted, and does not return the results i
 The issues I've met are segfaults, and also not changing a data structure soon enough, so it doesn't break
 the whole thing. Given that some results are dependent, the output at the end of the simulation is often far from what
 is expected.
+Some testing has been made with the parameters 10, 2, 2, 2, 2.

@@ -1,7 +1,7 @@
 //--------Header files included----//
 #include <iostream>
-#include "Bank.h"
-#include "WaitingQueue.h"
+#include "../include/Bank.h"
+#include "../include/WaitingQueue.h"
 
 //----------------------------//
 //----------Main File --------//

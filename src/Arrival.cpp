@@ -2,7 +2,7 @@
 // Created by redouane on 09/09/22.
 //
 //--------Header files included----//
-#include "Arrival.h"
+#include "../include/Arrival.h"
 #include <iostream>
 
 //--------Class Implementation--------//

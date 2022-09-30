@@ -2,8 +2,8 @@
 // Created by redouane on 09/09/22.
 //
 //--------Header files included----//
-#include "Bank.h"
-#include "Arrival.h"
+#include "../include/Bank.h"
+#include "../include/Arrival.h"
 //--------Class Implementation--------//
 
 using namespace std;

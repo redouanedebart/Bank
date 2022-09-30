@@ -2,8 +2,8 @@
 // Created by redouane on 09/09/22.
 //
 //--------Header files included----//
-#include "DES.h"
-#include "Event.h"
+#include "../include/DES.h"
+#include "../include/Event.h"
 #include<iostream>
 //--------Class Implementation--------//
 
