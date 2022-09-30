@@ -14,11 +14,11 @@
 
 class Arrival: public Event{
 protected:
-    Bank* _simPtr; //pointer to the bank
+    Bank* _simPtr; ///pointer to the bank
 public:
     Arrival(double triggerTime, Bank* simPtr);
     Arrival(const Arrival& arrival);
     ~Arrival();
-    void handle() override;//Creates a client
+    void handle() override; ///Creates a client, handles it, and also generate a new arrival event if possible
 };
 #endif //BANK_ARRIVAL_H

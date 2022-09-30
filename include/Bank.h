@@ -21,22 +21,22 @@ class Cashier;
 
 class Bank: public DES{
 protected:
-    WaitingQueue* _queue; //pointer to the waiting queue
-    int _cashierCount;  //number of cashiers in the bank
-    int _clientCount; //field to store the total number of cashier at the end of the simulation
-    std::list<Cashier*> _cashierList; //list of cashiers at the bank
-    double _expectedDuration; //the expected duration of the simulation
-    double _meanTimeBetweenArrivals; //average time between clients arrivals
+    WaitingQueue* _queue; ///pointer to the waiting queue
+    int _cashierCount;  ///number of cashiers in the bank
+    int _clientCount; ///field to store the total number of cashier at the end of the simulation
+    std::list<Cashier*> _cashierList; ///list of cashiers at the bank
+    double _expectedDuration; ///the expected duration of the simulation
+    double _meanTimeBetweenArrivals; ///average time between clients arrivals
 public:
     Bank(int _cashierCnt, double expDur, double meanTimeBtwArrivals);
     Bank(const Bank& b);
-    double actualDuration();
-    void addCashier(double msd);
-    void addQueue(WaitingQueue *q);
-    bool allCashiersFree();
-    void averageWaitingTime();
-    int cashierCount() const;
-    void cashierOccupationRate();
+    double actualDuration(); ///returns the actual duration of the simulation
+    void addCashier(double msd); ///adds a cashier to the list
+    void addQueue(WaitingQueue *q); ///add the waiting queue to the bank
+    bool allCashiersFree(); ///true if all the cashiers are available
+    void averageWaitingTime(); ///for the client
+    int cashierCount() const; /// number of cashiers
+    void cashierOccupationRate(); /// how busy a cashier is
     double expectedDuration() const;
     Cashier* firstFreeCashier();
     WaitingQueue* getWaitingQueue();

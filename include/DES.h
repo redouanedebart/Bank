@@ -22,11 +22,11 @@ class Event;
 
 class DES{
 protected:
-    Event* _currentEvent; //pointer to the current event
+    Event* _currentEvent; ///pointer to the current event
     //std::priority_queue<Event*, std::vector<Event*>, std::less<Event*>> _evtQueue;
     //uncomment event.h too if I want to try this again (priority_queue)
-    std::queue<Event*> _evtQueue; //queue of pointers to event objects: problem with this is: they are not sorted
-                                  //I wanted to try priority queue but other errors occurred. Didn't have time to fix it
+    std::queue<Event*> _evtQueue; ///queue of pointers to event objects: problem with this is: they are not sorted
+                                  ///I wanted to try priority queue but other errors occurred. Didn't have time to fix it
 
 
 public:

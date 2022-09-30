@@ -19,9 +19,9 @@ class Bank;
 class Client;
 class WaitingQueue{
 protected:
-    std::queue<Client> _queue; //the queue
-    Bank* _bank; //pointer to the bank
-    bool _empty; //true if the queue is empty
+    std::queue<Client> _queue; ///the queue
+    Bank* _bank; ///pointer to the bank
+    bool _empty; ///true if the queue is empty
     double _meanWaitingTime;
     int _maxLength;
     double _meanLength;

@@ -17,12 +17,12 @@
 class Bank;
 class Cashier{
 protected:
-    double _serviceDuration; // the mean service duration for this cashier
-    int _clientCounter; //how many clients the cashier served
-    bool _free; //true if the cashier is available to serve a client
-    double _actualWorkTime; //store the cumulated time of work of that cashier
-    Bank* _bank; //pointer to the bank
-    double _clientsWaitingTime; //store the waiting time of clients served by this cashier
+    double _serviceDuration; /// the mean service duration for this cashier
+    int _clientCounter; ///how many clients the cashier served
+    bool _free; ///true if the cashier is available to serve a client
+    double _actualWorkTime; ///store the cumulated time of work of that cashier
+    Bank* _bank; ///pointer to the bank
+    double _clientsWaitingTime; ///store the waiting time of clients served by this cashier
 
 public:
     Cashier(double meanServiceDuration, Bank *bankPtr);
