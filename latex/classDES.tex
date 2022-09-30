@@ -1,0 +1,128 @@
+\hypertarget{classDES}{}\doxysection{DES Class Reference}
+\label{classDES}\index{DES@{DES}}
+Inheritance diagram for DES\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDES}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDES_a40ada6e944e785fc5decca5217537964}\label{classDES_a40ada6e944e785fc5decca5217537964}} 
+{\bfseries DES} (\mbox{\hyperlink{classEvent}{Event}} $\ast$evt)
+\item 
+\mbox{\hyperlink{classDES_aacbc81f03706e98103ce6e02601d3986}{DES}} (const \mbox{\hyperlink{classDES}{DES}} \&d)
+\item 
+void \mbox{\hyperlink{classDES_aa8e2602bc3495ce9a861ab325752a62f}{add\+Event}} (\mbox{\hyperlink{classEvent}{Event}} \&e)
+\item 
+void \mbox{\hyperlink{classDES_a2edd42b67699820cb83435a3341745f6}{generate\+Timings}} (double mean\+Time\+Between\+Arrival, double expected\+Dur)
+\item 
+\mbox{\Hypertarget{classDES_aad518b1ec04d63a2978846949ba8d604}\label{classDES_aad518b1ec04d63a2978846949ba8d604}} 
+std\+::queue$<$ \mbox{\hyperlink{classEvent}{Event}} $\ast$ $>$ {\bfseries get\+Evt\+Queue} ()
+\item 
+\mbox{\Hypertarget{classDES_a69a19fdae8bbe2f984ad0f1b25552412}\label{classDES_a69a19fdae8bbe2f984ad0f1b25552412}} 
+std\+::queue$<$ double $>$ {\bfseries get\+Arrival\+Timings} ()
+\item 
+double \mbox{\hyperlink{classDES_a74908c16c3aedfb9bdf708a2f4ffff44}{get\+Time}} ()
+\item 
+void \mbox{\hyperlink{classDES_a9b41acd3a9adaf0ca4390f0aedf670d7}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classDES_ac0491e205ca37ed7d902ad9747657a72}{generate\+Effective\+Service\+Time}} (double value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDES_a4a91becf3d9642b4822a97013cd6e761}\label{classDES_a4a91becf3d9642b4822a97013cd6e761}} 
+std\+::queue$<$ double $>$ {\bfseries \+\_\+arrival\+Timings}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDES_a8a995e299a8fdccbb7424af19130ce6a}\label{classDES_a8a995e299a8fdccbb7424af19130ce6a}} 
+\mbox{\hyperlink{classEvent}{Event}} $\ast$ {\bfseries \+\_\+current\+Event}
+\item 
+\mbox{\Hypertarget{classDES_a4d03c8e6ae577218fdd789d75af46ce8}\label{classDES_a4d03c8e6ae577218fdd789d75af46ce8}} 
+std\+::queue$<$ \mbox{\hyperlink{classEvent}{Event}} $\ast$ $>$ {\bfseries \+\_\+evt\+Queue}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDES_aacbc81f03706e98103ce6e02601d3986}\label{classDES_aacbc81f03706e98103ce6e02601d3986}} 
+\index{DES@{DES}!DES@{DES}}
+\index{DES@{DES}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{DES()}{DES()}}
+{\footnotesize\ttfamily DES\+::\+DES (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDES}{DES}} \&}]{d }\end{DoxyParamCaption})}
+
+copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em d} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDES_aa8e2602bc3495ce9a861ab325752a62f}\label{classDES_aa8e2602bc3495ce9a861ab325752a62f}} 
+\index{DES@{DES}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void DES\+::add\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEvent}{Event}} \&}]{e }\end{DoxyParamCaption})}
+
+Adds an \mbox{\hyperlink{classEvent}{Event}} to the event list ? 
+\begin{DoxyParams}{Parameters}
+{\em e} & is an \mbox{\hyperlink{classEvent}{Event}} (arrival or departure) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDES_ac0491e205ca37ed7d902ad9747657a72}\label{classDES_ac0491e205ca37ed7d902ad9747657a72}} 
+\index{DES@{DES}!generateEffectiveServiceTime@{generateEffectiveServiceTime}}
+\index{generateEffectiveServiceTime@{generateEffectiveServiceTime}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{generateEffectiveServiceTime()}{generateEffectiveServiceTime()}}
+{\footnotesize\ttfamily double DES\+::generate\+Effective\+Service\+Time (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+generate random number in between 70\% and 130\% of the entry value this will be used to generate effective service duration of cashiers 
+\begin{DoxyParams}{Parameters}
+{\em value} & mean service duration of cashiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+effective duration (between 70\% and 130\% of value) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDES_a2edd42b67699820cb83435a3341745f6}\label{classDES_a2edd42b67699820cb83435a3341745f6}} 
+\index{DES@{DES}!generateTimings@{generateTimings}}
+\index{generateTimings@{generateTimings}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{generateTimings()}{generateTimings()}}
+{\footnotesize\ttfamily void DES\+::generate\+Timings (\begin{DoxyParamCaption}\item[{double}]{mean\+Time\+Between\+Arrival,  }\item[{double}]{expected\+Dur }\end{DoxyParamCaption})}
+
+Generating timings of Events (arrivals) using a poisson process,
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Time\+Between\+Arrival} & the mean time between arrivals\\
+\hline
+\end{DoxyParams}
+The number of arrivals in non-\/overlapping intervals are statistically independent. The probability of two or more arrivals happening during t is negligible compared to the probability of zero or one arrival, i.\+e., it is of the order o( t). \mbox{\Hypertarget{classDES_a74908c16c3aedfb9bdf708a2f4ffff44}\label{classDES_a74908c16c3aedfb9bdf708a2f4ffff44}} 
+\index{DES@{DES}!getTime@{getTime}}
+\index{getTime@{getTime}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double DES\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method that returns the time for other classes
+
+\begin{DoxyReturn}{Returns}
+the current time in the simulation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDES_a9b41acd3a9adaf0ca4390f0aedf670d7}\label{classDES_a9b41acd3a9adaf0ca4390f0aedf670d7}} 
+\index{DES@{DES}!run@{run}}
+\index{run@{run}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void DES\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+starts the clock and generate the schedule for the events using random generators. It is also destroying the events once they are finished 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+DES.\+h\item 
+DES.\+cpp\end{DoxyCompactItemize}

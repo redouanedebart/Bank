@@ -1,0 +1,69 @@
+\hypertarget{classArrival}{}\doxysection{Arrival Class Reference}
+\label{classArrival}\index{Arrival@{Arrival}}
+Inheritance diagram for Arrival\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classArrival}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArrival_a0cb5d696e94c90b6f47f61729a4670c3}{Arrival}} (double trigger\+Time, \mbox{\hyperlink{classBank}{Bank}} $\ast$sim\+Ptr)
+\item 
+\mbox{\hyperlink{classArrival_a4c92db3a71a26cd86c33323faee828f7}{Arrival}} (const \mbox{\hyperlink{classArrival}{Arrival}} \&arrival)
+\item 
+void \mbox{\hyperlink{classArrival_aa1978ad9118f2f99f0a372fd6e921f0f}{handle}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArrival_a663b064f9a8dbd95833c79b8b0700314}\label{classArrival_a663b064f9a8dbd95833c79b8b0700314}} 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ {\bfseries \+\_\+sim\+Ptr}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArrival_a0cb5d696e94c90b6f47f61729a4670c3}\label{classArrival_a0cb5d696e94c90b6f47f61729a4670c3}} 
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\doxysubsubsection{\texorpdfstring{Arrival()}{Arrival()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arrival\+::\+Arrival (\begin{DoxyParamCaption}\item[{double}]{trigger\+Time,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{sim\+Ptr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger\+Time} & to know when the event happens \\
+\hline
+{\em sim\+Ptr} & points to bank so we can access the cashiers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArrival_a4c92db3a71a26cd86c33323faee828f7}\label{classArrival_a4c92db3a71a26cd86c33323faee828f7}} 
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\doxysubsubsection{\texorpdfstring{Arrival()}{Arrival()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arrival\+::\+Arrival (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArrival}{Arrival}} \&}]{arrival }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em arrival} & reference to an arrival object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArrival_aa1978ad9118f2f99f0a372fd6e921f0f}\label{classArrival_aa1978ad9118f2f99f0a372fd6e921f0f}} 
+\index{Arrival@{Arrival}!handle@{handle}}
+\index{handle@{handle}!Arrival@{Arrival}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Arrival\+::handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If any \mbox{\hyperlink{classCashier}{Cashier}} is available, the client goes to the first \mbox{\hyperlink{classCashier}{Cashier}} available, else, the client is added to the get\+Waiting\+Queue this is also responsible for the creation of other arrivals 
+
+Reimplemented from \mbox{\hyperlink{classEvent_a143ba5b1ffa009cabdbb262feb8d0e98}{Event}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arrival.\+h\item 
+Arrival.\+cpp\end{DoxyCompactItemize}

@@ -21,8 +21,12 @@ program. At launch, the program will ask you the entry parameters for your simul
 *Note: the program doesn't yet manage careless inputs, so be careful.*
 
 ## Documentation
-The source code is commented and a configuration file for doxygen is provided in the archive.
-To generate the doxygen documentation, just type `./doxygen configuration`
+The source code is commented and doxygen documentation is available. If you have to
+generate it again, a configuration file for doxygen is provided in the archive.
+To generate the doxygen documentation, go to the directory where you have installed doxygen, where you can execute it by
+typing `./doxygen` . Then write `export PATH=$PATH:.`. This will add the path of doxygen to the environment variable
+path for this session. You can now go back to the source directory and just type `./doxygen configuration` 
+in the terminal.
 
 ## V1 flaws and bugs
 The program isn't working as well as I wanted, and does not return the results in a good way.

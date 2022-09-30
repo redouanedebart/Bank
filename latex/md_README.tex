@@ -1,0 +1,20 @@
+M2 IISC -\/ CY Cergy Paris Université \hypertarget{md_README_autotoc_md1}{}\doxysection{Table of content}\label{md_README_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Overview
+\item How to use it
+\item Documentation
+\item V1 flaws and bugs 
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md2}{}\doxysection{Overview}\label{md_README_autotoc_md2}
+This program aims at simulating a bank. More specifically, it is intended to give the user insights on the effectiveness of the cashiers, the waiting time of clients, and so on. For more precise information, you can get the subject here \+: \href{https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf}{\texttt{ link to the subject.}} The program is written in C++, and a Makefile is provided. \hypertarget{md_README_autotoc_md3}{}\doxysection{How to use it}\label{md_README_autotoc_md3}
+Open the archive, and use the command {\ttfamily make} in the main directory. You can then use the command {\ttfamily ./bank} to run the program. At launch, the program will ask you the entry parameters for your simulation\+:
+\begin{DoxyEnumerate}
+\item The expected duration of the simulation
+\item The mean time between clients arrival
+\item The number of cashiers present in the bank
+\item For each cashier, his productivity, ie the average time it takes him to serve a client
+\end{DoxyEnumerate}
+
+{\itshape Note\+: the program doesn\textquotesingle{}t yet manage careless inputs, so be careful.}\hypertarget{md_README_autotoc_md4}{}\doxysection{Documentation}\label{md_README_autotoc_md4}
+The source code is commented and a configuration file for doxygen is provided in the archive. To generate the doxygen documentation, just type {\ttfamily ./doxygen configuration}\hypertarget{md_README_autotoc_md5}{}\doxysection{V1 flaws and bugs}\label{md_README_autotoc_md5}
+The program isn\textquotesingle{}t working as well as I wanted, and does not return the results in a good way. The issues I\textquotesingle{}ve met are segfaults, and also not changing a data structure soon enough, so it doesn\textquotesingle{}t break the whole thing. Given that some results are dependent, the output at the end of the simulation is often far from what is expected. 

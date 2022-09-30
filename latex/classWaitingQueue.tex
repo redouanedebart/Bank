@@ -1,0 +1,119 @@
+\hypertarget{classWaitingQueue}{}\doxysection{Waiting\+Queue Class Reference}
+\label{classWaitingQueue}\index{WaitingQueue@{WaitingQueue}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaitingQueue_acb4e34507fb791ad1818a8224cae9384}{Waiting\+Queue}} (\mbox{\hyperlink{classBank}{Bank}} $\ast$bank\+Ptr)
+\item 
+int \mbox{\hyperlink{classWaitingQueue_a6968c22db05d41189cd13b713ac74676}{max\+Length}} () const
+\item 
+double \mbox{\hyperlink{classWaitingQueue_ae008f5591cd270371fcb0a7a952cdb0b}{mean\+Length}} () const
+\item 
+double \mbox{\hyperlink{classWaitingQueue_ac7fbd4d7d274225a9537f83c30a1a975}{mean\+Waiting\+Time}} () const
+\item 
+void \mbox{\hyperlink{classWaitingQueue_ad0cc0cf079d33cae3c3070df9c8e4560}{add\+Client}} (\mbox{\hyperlink{classClient}{Client}} \&c)
+\item 
+bool \mbox{\hyperlink{classWaitingQueue_ac45c276add2717bf3e4604543d1db7a7}{is\+Empty}} () const
+\item 
+\mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{classWaitingQueue_aa45c20ef4fb2f82e09a388604eca2dbe}{remove}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a904271ba0f282ddd710ddcaa56e81ab6}\label{classWaitingQueue_a904271ba0f282ddd710ddcaa56e81ab6}} 
+std\+::queue$<$ \mbox{\hyperlink{classClient}{Client}} $>$ {\bfseries \+\_\+queue}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a7a5581f1d7117a8da0956951171dd7c4}\label{classWaitingQueue_a7a5581f1d7117a8da0956951171dd7c4}} 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ {\bfseries \+\_\+bank}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a33e10c70c0054378964a49cdc81d6c01}\label{classWaitingQueue_a33e10c70c0054378964a49cdc81d6c01}} 
+bool {\bfseries \+\_\+empty}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a6fadcd604c470c616b86ede562106728}\label{classWaitingQueue_a6fadcd604c470c616b86ede562106728}} 
+double {\bfseries \+\_\+mean\+Waiting\+Time}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a2bca19a080005622cffe5d3ce9cd1b66}\label{classWaitingQueue_a2bca19a080005622cffe5d3ce9cd1b66}} 
+int {\bfseries \+\_\+max\+Length}
+\item 
+\mbox{\Hypertarget{classWaitingQueue_a615ffcf8b9a7e0dbf03741065a1c4b96}\label{classWaitingQueue_a615ffcf8b9a7e0dbf03741065a1c4b96}} 
+double {\bfseries \+\_\+mean\+Length}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaitingQueue_acb4e34507fb791ad1818a8224cae9384}\label{classWaitingQueue_acb4e34507fb791ad1818a8224cae9384}} 
+\index{WaitingQueue@{WaitingQueue}!WaitingQueue@{WaitingQueue}}
+\index{WaitingQueue@{WaitingQueue}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{WaitingQueue()}{WaitingQueue()}}
+{\footnotesize\ttfamily Waiting\+Queue\+::\+Waiting\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{bank\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\hyperlink{classWaitingQueue}{Waiting\+Queue}} constructor, will be called by \mbox{\hyperlink{classBank}{Bank()}} 
+\begin{DoxyParams}{Parameters}
+{\em bank\+Ptr} & Pointer on the bank so we can access important information Creates a get\+Waiting\+Queue. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaitingQueue_ad0cc0cf079d33cae3c3070df9c8e4560}\label{classWaitingQueue_ad0cc0cf079d33cae3c3070df9c8e4560}} 
+\index{WaitingQueue@{WaitingQueue}!addClient@{addClient}}
+\index{addClient@{addClient}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{addClient()}{addClient()}}
+{\footnotesize\ttfamily void Waiting\+Queue\+::add\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{c }\end{DoxyParamCaption})}
+
+Adds a client to the waiting queue 
+\begin{DoxyParams}{Parameters}
+{\em c} & reference to the client \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWaitingQueue_ac45c276add2717bf3e4604543d1db7a7}\label{classWaitingQueue_ac45c276add2717bf3e4604543d1db7a7}} 
+\index{WaitingQueue@{WaitingQueue}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Waiting\+Queue\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+method to know if the queue is empty or not \begin{DoxyReturn}{Returns}
+a boolean, true if the queue is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWaitingQueue_a6968c22db05d41189cd13b713ac74676}\label{classWaitingQueue_a6968c22db05d41189cd13b713ac74676}} 
+\index{WaitingQueue@{WaitingQueue}!maxLength@{maxLength}}
+\index{maxLength@{maxLength}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{maxLength()}{maxLength()}}
+{\footnotesize\ttfamily int Waiting\+Queue\+::max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor to the \+\_\+max\+Length field \begin{DoxyReturn}{Returns}
+the maximum length the get\+Waiting\+Queue has had 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWaitingQueue_ae008f5591cd270371fcb0a7a952cdb0b}\label{classWaitingQueue_ae008f5591cd270371fcb0a7a952cdb0b}} 
+\index{WaitingQueue@{WaitingQueue}!meanLength@{meanLength}}
+\index{meanLength@{meanLength}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{meanLength()}{meanLength()}}
+{\footnotesize\ttfamily double Waiting\+Queue\+::mean\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor to the \+\_\+mean\+Length field. The field is updated at every event timing \begin{DoxyReturn}{Returns}
+the mean length of the get\+Waiting\+Queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWaitingQueue_ac7fbd4d7d274225a9537f83c30a1a975}\label{classWaitingQueue_ac7fbd4d7d274225a9537f83c30a1a975}} 
+\index{WaitingQueue@{WaitingQueue}!meanWaitingTime@{meanWaitingTime}}
+\index{meanWaitingTime@{meanWaitingTime}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{meanWaitingTime()}{meanWaitingTime()}}
+{\footnotesize\ttfamily double Waiting\+Queue\+::mean\+Waiting\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+accessor to the \+\_\+mean\+Waiting\+Time field \begin{DoxyReturn}{Returns}
+the mean waiting time for a client in the get\+Waiting\+Queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWaitingQueue_aa45c20ef4fb2f82e09a388604eca2dbe}\label{classWaitingQueue_aa45c20ef4fb2f82e09a388604eca2dbe}} 
+\index{WaitingQueue@{WaitingQueue}!remove@{remove}}
+\index{remove@{remove}!WaitingQueue@{WaitingQueue}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}} $\ast$ Waiting\+Queue\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+pop the first client of the get\+Waiting\+Queue and returns it \begin{DoxyReturn}{Returns}
+the client going to be served 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Waiting\+Queue.\+h\item 
+Waiting\+Queue.\+cpp\end{DoxyCompactItemize}
