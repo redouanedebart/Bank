@@ -11,6 +11,7 @@ using namespace std;
 
 DES::DES(Event *evt) {
     _currentEvent = evt;
+    //priority_queue<Event *, vector<Event *>, less<Event*>> queue;
     std::queue<Event*> queue;
     _evtQueue = queue;
     std::queue<double> arr;
@@ -68,8 +69,7 @@ void DES::addEvent(Event& e) {
  * @return effective duration (between 70% and 130% of value)
  */
 double DES::generateEffectiveServiceTime(double value) {
-    double higherBound = value * 1.3;
-    double lowerBound = value * 0.7;
+
     srand(time(nullptr));
     int randomNumber;
     randomNumber = rand()%60;
@@ -92,7 +92,7 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
                            //the next line
     std::mt19937 rng (rd ()); // mt19937: Pseudo-random number generation
 
-    double lambda = meanTimeBetweenArrival/expectedDur;
+    double lambda = 1/meanTimeBetweenArrival;
     std::exponential_distribution<double> exp (lambda);
 
     double sumArrivalTimes=0;
@@ -109,7 +109,7 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
     }
 }
 
-std::queue<Event *> DES::getEvtQueue() {
+std::queue<Event*> DES::getEvtQueue() {
     return _evtQueue;
 }
 std::queue<double> DES::getArrivalTimings(){

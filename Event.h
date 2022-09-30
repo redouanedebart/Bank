@@ -24,6 +24,7 @@ public:
     ~Event();
     virtual void handle(); //method used to treat event, redefined in each subclass
     double getTime() const; //return the time at which the event occurs (triggerTime)
+    bool operator<(const Event* &rhs);
 };
 
 /*class Compare

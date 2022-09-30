@@ -39,3 +39,6 @@ void Event::handle() {}
 
 Event::~Event() = default;
 
+bool Event::operator<(const Event* &rhs) {
+    return this->_time<rhs->_time;
+}

@@ -73,7 +73,7 @@ double Bank::actualDuration() {
             return getTime();
         }
     }else {
-        return _evtQueue.back()->getTime();
+        return _evtQueue.front()->getTime(); //TODO: find a way to get time of last evt
     }
 }
 
@@ -93,7 +93,7 @@ int Bank::cashierCount() const {
 int Bank::totalClientsCount() {
     _clientCount = 0; //resetting the value to avoid unwanted sum in cas of wrong callings
     for (int i = 0; i < _cashierList.size(); ++i) {
-        _clientCount += (_cashierList.front()+i)->clientCount();
+        _clientCount += (_cashierList.front()-i)->clientCount();
     }
     return _clientCount;
 }
@@ -105,7 +105,7 @@ int Bank::totalClientsCount() {
 void Bank::printCashierInfo() {
     cout<<"Client count: \n\tper cashier:\n";
     for (int i = 0; i < _cashierList.size(); i++) {
-        cout<<"\t\tcashier "<< i<< ": "<<(_cashierList.front()+i)->clientCount()<<endl;
+        cout<<"\t\tcashier "<< i<< ": "<<(_cashierList.front()-i)->clientCount()<<endl;
     }
     cout<<"\t\ttotal: "<<this->totalClientsCount()<<endl;
 
@@ -148,11 +148,11 @@ void Bank::addQueue(WaitingQueue *q) {
  */
 void Bank::cashierOccupationRate() {
     double dur;
-    dur = actualDuration();
+    dur = _expectedDuration; //testing purpose
     cout<<"Cashiers occupation rate:\n";
     for (int i = 0; i < _cashierList.size(); ++i) {
 
-        cout << "\t\tcashier " << i << ": " << (_cashierList.front() + i)->occupationRate(dur) << endl;
+        cout << "\t\tcashier " << i << ": " << (_cashierList.front() - i)->occupationRate(dur) << endl;
     }
 }
 
@@ -173,8 +173,8 @@ bool Bank::allCashiersFree() {
  */
 void Bank::averageWaitingTime() {
     double waitingTime = 0;
-    for (int i = 0; i < _cashierList.size(); ++i) {
-        waitingTime += (_cashierList.front()+i)->getWaitingTime();
+    for (int i = 0; i < _cashierList.size(); i++) {
+        waitingTime += (_cashierList.front()-i)->getWaitingTime();
     }
     waitingTime = waitingTime / this->totalClientsCount();
     cout<<"Average waiting time for a client: "<<waitingTime<<endl;

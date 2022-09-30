@@ -23,9 +23,10 @@ class Event;
 class DES{
 protected:
     Event* _currentEvent;
-    //std::priority_queue<Event*, std::vector<Event*>, decltype(&Compare)> _evtQueue;
+    //std::priority_queue<Event*, std::vector<Event*>, std::less<Event*>> _evtQueue;
     //uncomment event.h too if I want to try this again (priority_queue)
     std::queue<Event*> _evtQueue;
+
 
 public:
     std::queue<double> _arrivalTimings;
