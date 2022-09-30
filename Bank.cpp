@@ -71,9 +71,9 @@ double Bank::actualDuration() {
     if (_evtQueue.empty()) {
         if (allCashiersFree()) {
             return getTime();
-        } else {
-            return _evtQueue.back()->getTime();
         }
+    }else {
+        return _evtQueue.back()->getTime();
     }
 }
 
@@ -102,12 +102,12 @@ int Bank::totalClientsCount() {
  * Prints the clients count per cashier and in total for the bank, and updates the field
  * clients count in bank so it can be used in another printing method
  */
-void Bank::printClientsCount() {
-    cout<<"Client count: \n\tper cashier:\n\t";
-    for (int i = 0; i < _cashierList.size(); ++i) {
-        cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->clientCount()<<endl;
+void Bank::printCashierInfo() {
+    cout<<"Client count: \n\tper cashier:\n";
+    for (int i = 0; i < _cashierList.size(); i++) {
+        cout<<"\t\tcashier "<< i<< ": "<<(_cashierList.front()+i)->clientCount()<<endl;
     }
-    cout<<"Client count: total: "<<this->totalClientsCount();
+    cout<<"\t\ttotal: "<<this->totalClientsCount()<<endl;
 
 }
 
@@ -147,11 +147,12 @@ void Bank::addQueue(WaitingQueue *q) {
  * Prints the working ratios of each cashiers
  */
 void Bank::cashierOccupationRate() {
-
-    cout<<"Cashiers occupation rate:\n\t";
+    double dur;
+    dur = actualDuration();
+    cout<<"Cashiers occupation rate:\n";
     for (int i = 0; i < _cashierList.size(); ++i) {
 
-        cout<<"\tcashier "<< i<< ": "<<(_cashierList.front()+i)->occupationRate()<<endl;
+        cout << "\t\tcashier " << i << ": " << (_cashierList.front() + i)->occupationRate(dur) << endl;
     }
 }
 
@@ -176,5 +177,5 @@ void Bank::averageWaitingTime() {
         waitingTime += (_cashierList.front()+i)->getWaitingTime();
     }
     waitingTime = waitingTime / this->totalClientsCount();
-    cout<<"Average waiting time for a client: "<<waitingTime;
+    cout<<"Average waiting time for a client: "<<waitingTime<<endl;
 }

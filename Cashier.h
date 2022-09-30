@@ -29,7 +29,7 @@ public:
     Cashier(const Cashier& c);
 
     int clientCount() const;
-    double occupationRate();
+    double occupationRate(double actualDur) const;
     bool isFree() const;
     void serve(Client &client);
     void wait();

@@ -40,7 +40,7 @@ public:
     double expectedDuration() const;
     Cashier* firstFreeCashier();
     WaitingQueue* getWaitingQueue();
-    void printClientsCount();
+    void printCashierInfo();
     int totalClientsCount();
 };
 

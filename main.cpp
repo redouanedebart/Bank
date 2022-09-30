@@ -42,10 +42,10 @@ int main() {
     //returning the results we want, ie actual duration, max and mean length of the getWaitingQueue, the client
     //count (total and per cashier), the occupation rate for each cashier, the mean waiting time for a cashier
 
-    cout<<"Simulation finished\n Results:\n Actual duration:"<<bank.actualDuration();
-    cout<<"Queue length: max length: "<< bank.getWaitingQueue()->maxLength();
+    cout<<"Simulation finished\n Results:\n Actual duration:"<<bank.actualDuration()<<endl;
+    cout<<"Queue length: max length: "<< bank.getWaitingQueue()->maxLength()<<endl;
     cout << "\tmean length: " << bank.getWaitingQueue()->meanLength() << endl;
-    bank.printClientsCount();
+    bank.printCashierInfo();
     bank.cashierOccupationRate();
     bank.averageWaitingTime();
     return 0;

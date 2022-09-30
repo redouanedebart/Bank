@@ -56,8 +56,8 @@ bool Cashier::isFree() const {
  * @return returns a double between 0 and 1 representing the percentage
  * of occupation of this cashier.
  */
-double Cashier::occupationRate() {
-    return _actualWorkTime / _bank->actualDuration();
+double Cashier::occupationRate(double actualDur) const {
+    return _actualWorkTime / actualDur;
 }
 
 /**
@@ -69,7 +69,7 @@ void Cashier::serve(Client &client) {
     double workTime;
     _clientCounter ++;
     _free = false;
-    time = _bank->getTime(); //SEGFAULT HERE, _bank exists but is empty
+    time = _bank->getTime();
     _clientsWaitingTime += time - client.arrivalTime();
     workTime = Bank::generateEffectiveServiceTime(_serviceDuration);
     time += workTime;

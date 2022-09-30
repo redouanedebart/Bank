@@ -71,9 +71,11 @@ double DES::generateEffectiveServiceTime(double value) {
     double higherBound = value * 1.3;
     double lowerBound = value * 0.7;
     srand(time(nullptr));
-    double randomNumber;
-    randomNumber = (double)rand() / higherBound;
-    return lowerBound + randomNumber *(higherBound - lowerBound);
+    int randomNumber;
+    randomNumber = rand()%60;
+    double d = 70 + randomNumber;
+    d = d/100;
+    return value * d;
 }
 
 /**
@@ -90,7 +92,7 @@ void DES::generateTimings(double meanTimeBetweenArrival, double expectedDur) {
                            //the next line
     std::mt19937 rng (rd ()); // mt19937: Pseudo-random number generation
 
-    double lambda = 1 / meanTimeBetweenArrival;
+    double lambda = meanTimeBetweenArrival/expectedDur;
     std::exponential_distribution<double> exp (lambda);
 
     double sumArrivalTimes=0;
