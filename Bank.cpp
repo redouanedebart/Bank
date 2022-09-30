@@ -176,6 +176,6 @@ void Bank::averageWaitingTime() {
     for (int i = 0; i < _cashierList.size(); i++) {
         waitingTime += (_cashierList.front()-i)->getWaitingTime();
     }
-    waitingTime = waitingTime / this->totalClientsCount();
+    waitingTime = floor(waitingTime / this->totalClientsCount());
     cout<<"Average waiting time for a client: "<<waitingTime<<endl;
 }
