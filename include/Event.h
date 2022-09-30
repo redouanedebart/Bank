@@ -15,8 +15,8 @@ class Bank;
 
 class Event{
 protected:
-    Bank* _simuPtr;
-    double _time;
+    Bank* _simuPtr; //pointer to the bank
+    double _time; //trigger time of the event
 public:
     Event(double triggerTime, Bank *simPtr);
     Event(const Event& e);

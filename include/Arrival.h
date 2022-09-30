@@ -14,7 +14,7 @@
 
 class Arrival: public Event{
 protected:
-    Bank* _simPtr;
+    Bank* _simPtr; //pointer to the bank
 public:
     Arrival(double triggerTime, Bank* simPtr);
     Arrival(const Arrival& arrival);

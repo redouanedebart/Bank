@@ -16,8 +16,8 @@ class Cashier;
 
 class Departure: public Event{
 protected:
-    Client* _clientPtr;
-    Cashier* _cashierPtr;
+    Client* _clientPtr; //pointer to the client
+    Cashier* _cashierPtr; //pointer to the cashier
 public:
     Departure(Client* c, Cashier* cash, double time);
     ~Departure();

@@ -21,12 +21,12 @@ class Cashier;
 
 class Bank: public DES{
 protected:
-    WaitingQueue* _queue;
-    int _cashierCount;
-    int _clientCount;
-    std::list<Cashier*> _cashierList;
-    double _expectedDuration;
-    double _meanTimeBetweenArrivals;
+    WaitingQueue* _queue; //pointer to the waiting queue
+    int _cashierCount;  //number of cashiers in the bank
+    int _clientCount; //field to store the total number of cashier at the end of the simulation
+    std::list<Cashier*> _cashierList; //list of cashiers at the bank
+    double _expectedDuration; //the expected duration of the simulation
+    double _meanTimeBetweenArrivals; //average time between clients arrivals
 public:
     Bank(int _cashierCnt, double expDur, double meanTimeBtwArrivals);
     Bank(const Bank& b);
